@@ -4,30 +4,30 @@
 
 ## Dasar Teori
 
-### A. ...<br/>
+### A. Pengertian Struktur Data<br/>
+Dalam pengertian paling dasarnya, struktur data adalah cara sistematis untuk mengorganisir dan menyimpan data di dalam memori komputer sehingga operasi tertentu—seperti pencarian, penyisipan, penghapusan, atau pengurutan—dapat dilakukan dengan cara yang paling efisien [1].
 
-...
+#### 1. Definisi Array
+Secara konseptual, array adalah kumpulan elemen dengan tipe yang sama yang disimpan dalam lokasi memori yang berurutan dan contigu (berdekatan). Karakteristik paling penting dari array adalah random access: kemampuan untuk mengakses elemen mana pun secara langsung dengan menggunakan indeksnya, dalam waktu konstan O(1) (Knuth, 2026). [1].
 
-#### 1. ...
+#### 2. Linked List
+Linked list adalah koleksi node yang masing-masing menyimpan nilai data dan satu atau lebih pointer yang menunjuk ke node berikutnya (atau sebelumnya, dalam kasus doubly linked list) [1].
 
-
-#### 2. ...
-
-
-#### 3. ...
+#### 3. Perbedaan Stack dan Queue
+Stack mengimplementasikan semantik LIFO (Last In, First Out): elemen yang terakhir dimasukkan adalah yang pertama dikeluarkan. Queue, sebaliknya, mengimplementasikan semantik FIFO (First In, First Out): elemen yang pertama dimasukkan adalah yang pertama dikeluarkan (Goodrich et al., 2026) [1].
 
 ### B. Pengenalan Bahasa C++<br/>
-Bahasa Pemrograman C++ adalah bahasa pemrograman tingkat tinggi yang biasa digunakan untuk pengembangan perangkat lunak, mulai dari aplikasi dekstop hingga permainan di komputer dan sistem operasi.[2]
+Bahasa Pemrograman C++ adalah bahasa pemrograman tingkat tinggi yang biasa digunakan untuk pengembangan perangkat lunak, mulai dari aplikasi dekstop hingga permainan di komputer dan sistem operasi [2].
 ...
 
 #### 1. Elemen Dasar, Tipe Data, dan Operator C++
-C++ menyediakan berbagai tipe data dasar seperti `int`, `float`, `double`, dan `char` untuk menampung nilai di memori [2][cite: 4]. Selain itu, C++ mendukung berbagai operator untuk manipulasi data, termasuk operator aritmatika serta operator *increment/decrement* baik berupa *pre-increment* (`++r`) maupun *post-increment* (`r++`).[2]
+C++ menyediakan berbagai tipe data dasar seperti `int`, `float`, `double`, dan `char` untuk menampung nilai di memori. Selain itu, C++ mendukung berbagai operator untuk manipulasi data, termasuk operator aritmatika serta operator *increment/decrement* baik berupa *pre-increment* (`++r`) maupun *post-increment* (`r++`) [2].
 
 #### 2. Struktur Kontrol Percabangan dan Perulangan
-Logika eksekusi program C++ diatur menggunakan struktur percabangan (`if`, `if-else`, dan `switch-case`) untuk pengambilan keputusan berdasarkan kondisi tertentu [2][cite: 4]. Selain itu, C++ menyediakan struktur perulangan (`for`, `while`, dan `do-while`) untuk mengeksekusi blok kode secara berulang [2][cite: 4]. Perbedaan utamanya terletak pada alur evaluasi syarat, seperti perulangan `do-while` yang selalu mengevaluasi kondisi di akhir sehingga minimal dieksekusi satu kali.[2]
+Logika eksekusi program C++ diatur menggunakan struktur percabangan (`if`, `if-else`, dan `switch-case`) untuk pengambilan keputusan berdasarkan kondisi tertentu. Selain itu, C++ menyediakan struktur perulangan (`for`, `while`, dan `do-while`) untuk mengeksekusi blok kode secara berulang . Perbedaan utamanya terletak pada alur evaluasi syarat, seperti perulangan `do-while` yang selalu mengevaluasi kondisi di akhir sehingga minimal dieksekusi satu kali [2].
 
 #### 3. Tipe Data Terstruktur dan Fungsi (Array, Struct, & Function)
-Untuk pengelolaan data yang lebih kompleks, C++ mendukung pengelompokan data sejenis menggunakan `array` serta pengelompokan variabel dengan tipe data berbeda menggunakan `struct` [2][cite: 4]. Selain itu, C++ memanfaatkan Fungsi (*Function*) untuk membagi program menjadi blok-blok modular yang dapat dipanggil kembali (*reusable*), baik melalui deklarasi prototipe maupun definisi fungsi.[2]
+Untuk pengelolaan data yang lebih kompleks, C++ mendukung pengelompokan data sejenis menggunakan `array` serta pengelompokan variabel dengan tipe data berbeda menggunakan `struct`. Selain itu, C++ memanfaatkan Fungsi (*Function*) untuk membagi program menjadi blok-blok modular yang dapat dipanggil kembali (*reusable*), baik melalui deklarasi prototipe maupun definisi fungsi [2].
 
 ## Guided
 
@@ -311,65 +311,124 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output1.png)
 
-contoh :
-![Screenshot Output Unguided 1_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided1-1.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 1_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output1(1).png)
 
-penjelasan unguided 1
+Penjelasan unguided 1 :
+Membuat program menghitung operasi dasar, penjumlahan, pengurangan, perkalian, dan pembagian. Terdapat dua variabel yang ditentukan yaitu x dan y, bertipe data integer. Dua variabel tersebut akan dieksekusi berdasarkan setiap perintah operasi dasar matematika. Contoh x = 10, y = 5. Output : 10 + 5 = 15, 10 - 5 = 5, 10 * 5 = 50, 10 / 5 = 2. 
+
 
 ### 2. (isi dengan soal unguided 2)
 
 ```C++
-source code unguided 2
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   int bilangan;
+   string sKecil[] = {"nol","satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"};
+   string sKapital[] = {"", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan"};
+   
+   cout << "Masukkan angka (0 - 100)" << endl;
+   cin >> bilangan;
+
+   
+   
+   if (bilangan >= 0 && bilangan <= 11) {
+      cout << sKecil[bilangan];
+   }else if (bilangan >= 12 && bilangan <= 19) {
+      cout << sKecil[bilangan % 10] << " belas";
+   }else if (bilangan >= 20 && bilangan <= 99) {
+      cout << sKecil[bilangan / 10] << " puluh";
+      if (bilangan % 10 != 0) {
+         cout << " " << sKapital[bilangan%10];
+      }
+   }else if (bilangan == 100) {
+      cout << "seratus\n";
+   }
+
+   if (bilangan < 0 || bilangan > 100) {
+      cout << "Input tidak valid, masukkan angka 0 hingga 100" << endl;
+      return 0;
+   }
+
+   return 0;
+
+}
 ```
 
 ### Output Unguided 2 :
 
 ##### Output 1
 
-![Screenshot Output Unguided 2_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-contoh :
-![Screenshot Output Unguided 2_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided2-1.png)
+![Screenshot Output Unguided 2_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output2.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 2_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output2(1).png)
 
-penjelasan unguided 2
+Penjelasan unguided 2 :
+Program digunakan untuk konversi angka 0 sampai 100 yang dimasukkan pengguna menjadi tulisan, berdasarkan angkanya. Terdapat dua array string: sKecil untuk kata angka 0 sampai 11, dan sKapital untuk kata satu sampai sembilan dengan huruf awal kapital. Setelah angka dibaca pada variabel bilangan, program mencetaknya melalui kondisi if-else. Pada angka 0 sampai 11 diambil dari sKecil sesuai indeksnya. Angka 12 sampai 19 diambil dari digit satuannya (bilangan % 10) dan ditambah kata "belas". Angka 20 sampai 99 ditulis dari digit puluhannya (bilangan / 10) ditambah kata "puluh", dan jika satuannya bukan nol, kata satuan diambil dari sKapital, sehingga 47 tampil sebagai "empat puluh Tujuh". Angka 100 dicetak sebagai "seratus", sedangkan angka di luar rentang 0 sampai 100 menampilkan pesan bahwa input tidak valid.
+
 
 ### 3. (isi dengan soal unguided 3)
 
 ```C++
-source code unguided 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cout << "input: ";
+    cin >> a;
+    
+    cout << "output: " << endl;
+
+    for (int i = a; i >= 0; i--){
+       for (int g = 0; g < a - i; g++) {
+            cout << "  ";
+       }
+
+       for (int g = i; g >= 1; g--) {
+         cout << g << " ";
+       }
+
+       cout << "*";
+       
+       for (int g = 1; g <= i; g++){
+        cout << " " << g;
+       }
+       cout << endl;
+    }
+
+    return 0;
+}
 ```
 
 ### Output Unguided 3 :
 
 ##### Output 1
 
-![Screenshot Output Unguided 3_1](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-contoh :
-![Screenshot Output Unguided 3_1](https://github.com/DhimazHafizh/2311102151_Muhammad-Dhimas-Hafizh-Fathurrahman/blob/main/Pertemuan1_Modul1/Output-Unguided3-1.png)
+![Screenshot Output Unguided 3_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output3.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 3_2](https://github.com/(username github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 3_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output3(1).png)
 
-penjelasan unguided 3
+Penjelasan unguided 3 :
+Program ini mencetak pola segitiga terbalik simetris yang tersusun dari bilangan asli dan tanda bintang. Pada baris pertama, angka menurun dari nilai input hingga 1, diikuti tanda bintang, lalu angka menaik dari 1 kembali ke nilai input. Baris-baris berikutnya memakai pola yang sama dengan angka yang makin sedikit dan posisi yang makin menjorok ke kanan, hingga baris terakhir hanya berisi bintang. Secara teknis, perulangan luar dengan variabel i berjalan dari a sampai 0 untuk menentukan jumlah baris. Di dalamnya, perulangan pertama mencetak spasi sebanyak a - i sebagai indentasi, perulangan kedua mencetak angka menurun dari i ke 1 lalu tanda bintang, dan perulangan ketiga mencetak angka menaik dari 1 ke i.
 
 ## Kesimpulan
-
-...
+Dari praktikum ini, saya memperoleh pemahaman awal mengenai dasar-dasar bahasa C++, seperti operator aritmatika, percabangan, perulangan, struct, array, dan fungsi. Karena pada semester sebelumnya saya menggunakan bahasa Go, saya masih memerlukan waktu untuk menyesuaikan diri, terutama pada aturan penulisan sintaks dan penggunaan operator yang berbeda. Meskipun demikian, setelah mengerjakan latihan pada modul ini, pemahaman saya terhadap cara kerja C++ menjadi lebih baik.
 
 ## Referensi
 
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN.
-<br>[2] Ritonga, A., & Yahfizham. (2023). Studi Literatur Perbandingan Bahasa Pemrograman C++ Dan Bahasa Pemrograman Python Pada Algoritma Pemrograman. Jurnal Teknik Informatika dan Teknologi Informasi (JUTITI), 3(3), 56–63.
-<br>...
+[1] Satriani, S., Andriany, D., Rusmawati, R., Mima, M., Masnur, M., S, S., & Rinayanti Manullang, K. (2026). Pengenalan Struktur Data dan Perannya dalam Pemrograman. Jejak Digital: Jurnal Ilmiah Multidisiplin, 2(3), 4835-4848.
+<br>
+[2] Ritonga, A., & Yahfizham. (2023). Studi Literatur Perbandingan Bahasa Pemrograman C++ Dan Bahasa Pemrograman Python Pada Algoritma Pemrograman. Jurnal Teknik Informatika dan Teknologi Informasi (JUTITI), 3(3), 56–63.
+<br>
