@@ -1,3 +1,3 @@
-     cout<<"\n\ndata ke-"<<i+1;
-        cout<<"\n\nnama="<<siswa[i].nama;
-        cout<<"\n\nnilai="<<siswa[i].nilai;
+for (int h = i; h < a; h++){
+        //     cout << i << " ";
+        // }
