@@ -288,7 +288,23 @@ Melalui penerapan fungsi buatan ctof, kode ini memproses perhitungan konversi su
 ### 1. (isi dengan soal unguided 1)
 
 ```C++
-source code unguided 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x, y;
+
+    cout << "Masukkan Input 2 bilangan : ";
+    cin >> x;
+    cin >> y;
+    cout << "Hasil penjumlahan = " << x + y << endl;
+
+    cout << "Hasil pengurangan = " << x - y << endl;
+    cout << "Hasil perkalian = " << x * y << endl;
+    cout << "Hasil pembagian = " << x / y << endl;
+
+    return 0;
+}
 ```
 
 ### Output Unguided 1 :
