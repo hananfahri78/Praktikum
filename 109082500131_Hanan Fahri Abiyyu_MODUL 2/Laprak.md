@@ -30,7 +30,7 @@ Untuk pengelolaan data yang lebih kompleks, C++ mendukung pengelompokan data sej
 
 ## Guided
 
-### 1. ...
+### 1. Guided 1
 
 ```C++
 #include <iostream>
@@ -68,8 +68,9 @@ int main(){
     return 0;
 }
 ```
-Program tersebut menghitung operasi matematika (7 + 3) / (3 + 1) atau 10 / 4. Ketiga variabel tersebut, X, Y, dan W dideklarasikan sebagai integer (bilangan bulat), proses pembagian dilakukan antar-integer terlebih dahulu. Karena operasi pembagian dilakukan antar-variabel integer, hasil operasinya bernilai 2 (bukan 2.5). Hasil 2 tersebut baru dimasukkan ke dalam variabel Z, kemudian dicetak pada output program.
-### 2. ...
+Program ini mengimplementasikan pengolahan array satu dimensi dan dua dimensi secara bersamaan menggunakan konstanta MAX berukuran 5 sebagai batas ukuran data. Program menggunakan variabel i dan j bertipe integer sebagai pemegang indeks perulangan, array nilai bertipe float berukuran 5 untuk menampung input nilai siswa, serta array dua dimensi nilai_tahun bertipe integer statis yang telah diinisialisasi secara langsung dengan data matriks berukuran 5x5. Proses eksekusi dimulai dengan perulangan for dari i = 0 hingga i < MAX yang meminta input lima nilai siswa dari pengguna dan menyimpannya ke dalam array nilai, diikuti dengan perulangan for kedua untuk menampilkan data nilai siswa tersebut kembali ke layar. Terakhir, program memanfaatkan perulangan bersarang (nested loop) di mana perulangan i mengontrol perpindahan baris dan perulangan j mencetak tiap elemen array nilai_tahun per kolom, sehingga seluruh matriks dua dimensi berhasil ditampilkan ke layar dalam struktur baris dan kolom yang rapi.
+
+### 2. Guided 2
 
 ```C++
 #include <iostream>
@@ -92,9 +93,15 @@ int main(){
     return 0;
 }
 ```
-Program tersebut diawali dengan deklarasi variabel r bernilai 10 dan variabel s yang belum diisi. Selanjutnya, s dihitung lewat pernyataan s = 10 + ++r. Tanda ++ yang diletakkan sebelum r disebut pre-increment, yang berarti nilai r ditambah 1 terlebih dahulu sebelum digunakannya dalam perhitungan. Jadi r berubah dari 10 menjadi 11, lalu 11 itulah yang dijumlahkan dengan 10, sehingga s bernilai 21. Perubahan tadi tersimpan di variabel r, sehingga setelah baris tersebut, nilai r tetap 11, bukan kembali ke 10. Pada bagian akhir, program mencetak dua baris, yaitu Nilai r= 11 dan Nilai s= 21.
+Kode program ini memperlihatkan alur kerja pointer dalam mengakses alamat memori dan nilai dari suatu variabel. Variabel x bertipe data integer diisi dengan nilai 87, lalu pointer px diatur untuk menyimpan lokasi alamat memori x menggunakan simbol &x. Selanjutnya, nilai pada variabel y diambil dari lokasi yang ditunjuk oleh px menggunakan operator dereference (*px). Di bagian akhir, baris perintah cout mencetak alamat memori x, isi dari pointer px, nilai variabel x, serta nilai yang diambil dari *px dan y untuk memperlihatkan bahwa isi dari px memang berupa alamat memori x, sehingga *px dan y menghasilkan nilai angka yang sama.
 
-### 3. ...
+Contoh Output : Alamat x = 0x90384fdse
+                Isi px = 0x90384fdse
+                Isi x = 87
+                Nilai yang ditunjuk px = 87 (Isi nilai dari variabel x)
+                Nilai y = 87 (*px)
+
+### 3. Guided 3
 
 ```C++
 #include <iostream>
@@ -131,9 +138,9 @@ int maks3(int a, int b, int c){
     return (temp_max);
 }
 ```
-Program ini menggunakan post-increment (r++), sehingga nilai awal r (10) digunakan terlebih dahulu untuk penjumlahan. Hal ini membuat s bernilai 20 (10 + 10). Setelah operasi selesai, nilai r bertambah menjadi 11, sehingga output yang dihasilkan adalah Nilai r = 11 dan Nilai s = 20. Perbedaannya dengan pre-increment hanya terletak pada variabel s. Pada pre-increment (++r), nilai r bertambah sebelum penjumlahan sehingga s bernilai 21. Sedangkan pada post-increment, penjumlahan menggunakan nilai awal r sehingga s bernilai 20. Nilai akhir r pada kedua kasus tetap sama-sama 11.
+Program tersebut dirancang untuk membandingkan tiga nilai bulat dari input pengguna, untuk menentukan angka terbesar menggunakan fungsi kustom maks3(). Pada main program, tiga angka yang dimasukkan disimpan dalam variabel x, y, dan z sebelum dikirimkan sebagai parameter ke fungsi pembanding. Dalam function maks3, variabel temp_max diisi dengan nilai awal a sebagai patokan, lalu diperiksa secara berurutan terhadap nilai b dan c melalui dua pengondisian if. Jika ditemukan nilai yang lebih besar, temp_max akan memperbarui isinya hingga mendapatkan nilai tertinggi, yang kemudian dikembalikan menggunakan return untuk langsung dicetak pada output.
 
-### 4. ...
+### 4. Guided 4
 
 ```C++
 #include <iostream>
@@ -155,9 +162,9 @@ void tulis(int x){
         cout<<"baris ke-" << i+1 << endl;
 }
 ```
-Program di atas menggunakan dua variabel bertipe data double, yaitu tot_pembelian untuk menyimpan input total belanja dari pengguna dan diskon yang bernilai 0 untuk menyimpan besaran potongan harga. Setelah menerima nilai tot_pembelian, program mengecek kondisi if apakah belanjaan mencapai Rp100000 atau lebih. Jika kondisi terpenuhi, nilai diskon dihitung sebesar 5% dari total belanja (0.05 * tot_pembelian), sedangkan jika kurang dari nominal tersebut, nilainya tetap 0. Pada akhir program, nilai diskon yang diperoleh akan dicetak pada output.
+Program ini menerapkan pemanggilan prosedur tambahan tulis() untuk mencetak penomoran baris secara berulang sesuai jumlah yang ditentukan pengguna. Nilai masukan ditampung oleh variabel jum bertipe integer di dalam main program, lalu diteruskan ke dalam variabel x saat prosedur tulis() dipanggil. Di dalam prosedur tulis(), instruksi perulangan for mengeksekusi mulai dari i = 0 selama nilai i lebih kecil dari x. Pada setiap iterasi, program mencetak string "baris ke-" yang dirangkai dengan penambahan i + 1, sehingga penomoran di layar dapat tercetak runtut mulai dari angka satu hingga mencapai batas jumlah yang diinputkan.
 
-### 5. ...
+### 5. Guided 5
 
 ```C++
 #include <iostream>
@@ -197,11 +204,11 @@ int main() {
 
 }
 ```
-Program pada nomor 5 menggunakan dua variabel bertipe data double, yaitu tot_pembelian untuk menyimpan input total belanja dari pengguna dan diskon bernilai 0, berfungsi untuk menyimpan besaran potongan harga. Berbeda dari contoh sebelumnya, kode ini menambahkan kondisi else untuk pengondisian saat if tidak terpenuhi. jika tot_pembelian mencapai Rp100000 atau lebih, kondisi if terpenuhi sehingga diskon dihitung sebesar 5% (0.05 * tot_pembelian), sedangkan jika kurang dari nominal tersebut, alur berpindah ke blok else yang memastikan nilai diskon tetap 0. Pada akhir program, nilai diskon yang diperoleh dicetak pada output program.
+Membuat program untuk membandingkan tiga metode pengiriman parameter dalam C++ melalui proses penukaran nilai dua variabel integer. Pada main program, variabel a dan b diinisialisasi dengan nilai 4 dan 6 sebelum diproses oleh masing-masing prosedur. Pemanggilan prosedur tukarValue() tidak mengubah nilai asli di dalam main() karena hanya mengolah salinan datanya. Perubahan nilai baru terjadi saat prosedur tukarPointer() dipanggil menggunakan alamat memori &a dan &b, yang menukar isi variabel secara langsung sehingga a menjadi 6 dan b menjadi 4. Selanjutnya, prosedur tukarReference() memanfaatkan alias variabel untuk menukar kembali nilainya ke posisi awal, sekaligus membuktikan bahwa manipulasi nilai variabel utama hanya dapat terjadi jika menggunakan pengiriman parameter berbasis pointer atau reference.
 
 ## Unguided
 
-### 1. (isi dengan soal unguided 1)
+### 1. Operasi Matematika Dasar (Penjumlahan, Pengurangan, dan Perkalian)
 
 ```C++
 #include <iostream>
@@ -336,7 +343,7 @@ Penjelasan unguided 1 :
 Membuat program menghitung operasi dasar, penjumlahan, pengurangan, perkalian, dan pembagian. Terdapat dua variabel yang ditentukan yaitu x dan y, bertipe data integer. Dua variabel tersebut akan dieksekusi berdasarkan setiap perintah operasi dasar matematika. Contoh x = 10, y = 5. Output : 10 + 5 = 15, 10 - 5 = 5, 10 * 5 = 50, 10 / 5 = 2. 
 
 
-### 2. (isi dengan soal unguided 2)
+### 2. Menukar nilai variabel (Pointer dan Reference)
 
 ```C++
 #include <iostream>
@@ -394,29 +401,86 @@ Program digunakan untuk konversi angka 0 sampai 100 yang dimasukkan pengguna men
 #include <iostream>
 using namespace std;
 
-int main() {
-    int a;
-    cout << "input: ";
-    cin >> a;
-    
-    cout << "output: " << endl;
-
-    for (int i = a; i >= 0; i--){
-       for (int g = 0; g < a - i; g++) {
-            cout << "  ";
-       }
-
-       for (int g = i; g >= 1; g--) {
-         cout << g << " ";
-       }
-
-       cout << "*";
-       
-       for (int g = 1; g <= i; g++){
-        cout << " " << g;
-       }
-       cout << endl;
+int searchMax(int arr[], int n) { 
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
     }
+
+    return max;
+}
+
+int searchMin(int arr[], int n) {
+    int min = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+
+}
+
+void rerata(int arr[], int n, double *hasil) {
+    double total = 0;
+    for (int i = 0; i < n; i++) {
+        total += arr[i];
+    }
+    *hasil = total / n;
+}
+
+void tampilkan(int arr[], int n) {
+    cout << "Isi Array : ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+}
+
+int main() {
+    int arrA[] = {48, 2, 7, 21, 5, 20, 77, 9, 10, 1};
+    int menu;
+    int n = sizeof(arrA) / sizeof(arrA[0]);
+    double rata_rata;
+    
+    do {
+    cout << "--- Menu Program Array ---" << endl;
+    cout << "1. Tampilkan isi array" << endl;
+    cout << "2. Cari nilai maksimum" << endl;
+    cout << "3. Cari nilai minimum" << endl;
+    cout << "4. Hitung nilai rata-rata" << endl;
+    cout << "0. Exit\n" << endl;
+    
+    cout << "Pilih menu : ";
+    cin >> menu;
+
+    switch (menu){
+        case 1:
+            tampilkan(arrA, n);
+            break;
+        case 2:
+            cout << "Nilai Maksimum array = " << searchMax(arrA, n) << endl;
+            break;
+        case 3:
+            cout << "Nilai Minimum array = " << searchMin(arrA, n) << endl;
+            break;
+        case 4:
+            rerata(arrA, n, &rata_rata);
+            cout << "Nilai Rata-rata = " << rata_rata << endl; 
+            break;
+        case 0:
+            cout << "Terima kasih telah menggunakan aplikasi kami" << endl;
+            break;
+    
+    default:
+        cout << "Input menu tidak valid! Silakan coba lagi!" << endl;
+        break;
+    }
+
+    } while(menu != 0);
 
     return 0;
 }
