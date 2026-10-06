@@ -508,5 +508,7 @@ Berdasarkan materi praktikum Pengenalan Bahasa C++ yang meliputi Array, Array 1 
 [1] L. J. E. Dewi, "Media Pembelajaran Bahasa Pemrograman C++," Jurnal Pendidikan Teknologi dan Kejuruan (JPTK) UNDIKSHA, vol. 7, no. 1, pp. 63–72, Jan. 2010. 
 <br>
 [2] N. Tou, Bahan Ajar Dasar-Dasar Pemrograman. Balunijuk: Jurusan Teknologi Informasi, Universitas Bangka Belitung, 2022.
+<br>
 [3] L. J. E. Dewi, "Media Pembelajaran Bahasa Pemrograman C++," Jurnal Pendidikan Teknologi dan Kejuruan (JPTK) UNDIKSHA, vol. 7, no. 1, pp. 63–72, Jan. 2010.
+<br>
 [4] G. A. A. D. Indradewi, I. M. O. Widyantara, dan A. A. K. O. Sudana, "Sistem Visualisasi Eksekusi Pointer pada Pemrograman C++," Lontar Komputer: Jurnal Ilmiah Teknologi Informasi, vol. 6, no. 3, pp. 182–191, Des. 2015.
