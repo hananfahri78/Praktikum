@@ -1,32 +1,30 @@
-# <h1 align="center">Laporan Praktikum Modul 2 - Codeblocks IDE & Pengenalan Bahas C++ (Bagian Pertama)</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 - Pengenalan Bahasa C++ (Bagian Kedua)</h1>
 
 <p align="center">Hanan Fahri Abiyyu - 109082500131</p>
 
 ## Dasar Teori
 
-### A. Pengertian Struktur Data<br/>
-Dalam pengertian paling dasarnya, struktur data adalah cara sistematis untuk mengorganisir dan menyimpan data di dalam memori komputer sehingga operasi tertentu—seperti pencarian, penyisipan, penghapusan, atau pengurutan—dapat dilakukan dengan cara yang paling efisien [1].
+### A. Array <br/>
+Array didefinisikan sebagai sekumpulan alokasi memori untuk menyimpan data bertipe seragam yang diakses melalui penomoran indeks berbasis nol [1, hal. 70].
 
-#### 1. Definisi Array
-Secara konseptual, array adalah kumpulan elemen dengan tipe yang sama yang disimpan dalam lokasi memori yang berurutan dan contigu (berdekatan). Karakteristik paling penting dari array adalah random access: kemampuan untuk mengakses elemen mana pun secara langsung dengan menggunakan indeksnya, dalam waktu konstan [1].
+#### 1. Array 1 Dimensi
+Array satu dimensi mengelompokkan elemen-elemen data bertipe seragam ke dalam satu variabel berformat satu baris. Seluruh nilai yang tersimpan di dalamnya terbagi ke dalam beberapa kolom dan dipanggil menggunakan nomor indeks berbasis nol [2, hal. 29].
 
-#### 2. Linked List
-Linked list adalah koleksi node yang masing-masing menyimpan nilai data dan satu atau lebih pointer yang menunjuk ke node berikutnya (atau sebelumnya, dalam kasus doubly linked list) [1].
+#### 2. Array 2 Dimensi
+Array dua dimensi merupakan kumpulan alokasi memori bertipe data sama yang disusun dalam bentuk baris dan kolom menyerupai matriks, di mana setiap elemennya diakses menggunakan dua nomor indeks penunjuk [3, hal. 70].
 
-#### 3. Perbedaan Stack dan Queue
-Stack mengimplementasikan semantik LIFO (Last In, First Out): elemen yang terakhir dimasukkan adalah yang pertama dikeluarkan. Queue, sebaliknya, mengimplementasikan semantik FIFO (First In, First Out): elemen yang pertama dimasukkan adalah yang pertama dikeluarkan [1].
+#### 3. Array Multidimensi
+Array multidimensi merupakan struktur data yang terbentuk dari penggabungan beberapa array satu dimensi sehingga mampu mengorganisasikan data dalam bentuk baris dan kolom. Karena memiliki tata letak dua arah seperti tabel, struktur ini sering disebut sebagai matriks dan difungsikan untuk menyimpan sekumpulan data berdimensi lebih dari satu [2, hal. 29].
 
-### B. Pengenalan Bahasa C++<br/>
-Bahasa Pemrograman C++ adalah bahasa pemrograman tingkat tinggi yang biasa digunakan untuk pengembangan perangkat lunak, mulai dari aplikasi dekstop hingga permainan di komputer dan sistem operasi [2].
+Proses pendeklarasian array multidimensi pada dasarnya mirip dengan array satu dimensi, tetapi membutuhkan dua pasang kurung siku sebagai petunjuk penomoran indeks. Pasangan kurung siku pertama dipakai untuk menentukan alokasi elemen baris, sedangkan kurung siku kedua digunakan untuk mendefinisikan posisi kolom [2, hal. 30].
 
-#### 1. Elemen Dasar, Tipe Data, dan Operator C++
-C++ menyediakan berbagai tipe data dasar seperti `int`, `float`, `double`, dan `char` untuk menampung nilai di memori. Selain itu, C++ mendukung berbagai operator untuk manipulasi data, termasuk operator aritmatika serta operator *increment/decrement* baik berupa *pre-increment* (`++r`) maupun *post-increment* (`r++`) [2].
+### B. Pointer dan Reference<br/>
 
-#### 2. Struktur Kontrol Percabangan dan Perulangan
-Logika eksekusi program C++ diatur menggunakan struktur percabangan (`if`, `if-else`, dan `switch-case`) untuk pengambilan keputusan berdasarkan kondisi tertentu. Selain itu, C++ menyediakan struktur perulangan (`for`, `while`, dan `do-while`) untuk mengeksekusi blok kode secara berulang . Perbedaan utamanya terletak pada alur evaluasi syarat, seperti perulangan `do-while` yang selalu mengevaluasi kondisi di akhir sehingga minimal dieksekusi satu kali [2].
+#### 1. Pointer
+Pointer merupakan variabel khusus yang digunakan untuk menyimpan alamat memori fisik dari suatu nilai atau variabel lain. Berbeda dengan variabel biasa yang menyimpan nilai secara langsung, pointer bekerja dengan menyimpan alokasi alamat memori sehingga memungkinkan akses dan pengolahan data secara langsung pada memori utama untuk meningkatkan efisiensi eksekusi program [4, hal. 183].
 
-#### 3. Tipe Data Terstruktur dan Fungsi (Array, Struct, & Function)
-Untuk pengelolaan data yang lebih kompleks, C++ mendukung pengelompokan data sejenis menggunakan `array` serta pengelompokan variabel dengan tipe data berbeda menggunakan `struct`. Selain itu, C++ memanfaatkan Fungsi (*Function*) untuk membagi program menjadi blok-blok modular yang dapat dipanggil kembali (*reusable*), baik melalui deklarasi prototipe maupun definisi fungsi [2].
+#### 2. Reference
+Reference merupakan alias atau nama sekunder yang merujuk secara langsung ke lokasi/alamat memori dari suatu variabel yang sudah dideklarasikan sebelumnya . Penggunaan reference mempermudah manipulasi variabel asli tanpa perlu membuat duplikasi data baru di dalam memori, sehingga penggunaan alokasi memori menjadi lebih efisien [4, hal. 184].
 
 ## Guided
 
@@ -340,7 +338,7 @@ int main() {
 ![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided1(1).png)
 
 Penjelasan unguided 1 :
-Membuat program menghitung operasi dasar, penjumlahan, pengurangan, perkalian, dan pembagian. Terdapat dua variabel yang ditentukan yaitu x dan y, bertipe data integer. Dua variabel tersebut akan dieksekusi berdasarkan setiap perintah operasi dasar matematika. Contoh x = 10, y = 5. Output : 10 + 5 = 15, 10 - 5 = 5, 10 * 5 = 50, 10 / 5 = 2. 
+Membuat program untuk mengolah operasi aritmetika matriks berukuran 3x3 yang mencakup penjumlahan, pengurangan, dan perkalian melalui antarmuka menu interaktif. Pada main program, perulangan do-while dipadukan dengan percabangan switch-case untuk mengatur alur pilihan menu. Perulangan do-while berfungsi menjaga agar tampilan menu terus muncul berulang kali dengan mengeksekusi blok program terlebih dahulu baru kemudian mengevaluasi kondisi menu != 0 di akhir, sedangkan switch-case bertugas mengarahkan alur eksekusi program ke prosedur perhitungan yang sesuai berdasarkan nilai angka menu yang diinputkan pengguna. Setelah opsi dipilih, program menjalankan prosedur Input() untuk menerima input angka pada matriks X dan Y, memprosesnya melalui prosedur penjumlahan(), pengurangan(), atau perkalian(), lalu menyimpan hasilnya ke matriks Z sebelum dicetak ke layar lewat prosedur tampilkanOutput().
 
 
 ### 2. Menukar nilai variabel (Pointer dan Reference)
@@ -392,7 +390,7 @@ int main() {
 ![Screenshot Output Unguided 2_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided2(1).png)
 
 Penjelasan unguided 2 :
-Program digunakan untuk konversi angka 0 sampai 100 yang dimasukkan pengguna menjadi tulisan, berdasarkan angkanya. Terdapat dua array string: sKecil untuk kata angka 0 sampai 11, dan sKapital untuk kata satu sampai sembilan dengan huruf awal kapital. Setelah angka dibaca pada variabel bilangan, program mencetaknya melalui kondisi if-else. Pada angka 0 sampai 11 diambil dari sKecil sesuai indeksnya. Angka 12 sampai 19 diambil dari digit satuannya (bilangan % 10) dan ditambah kata "belas". Angka 20 sampai 99 ditulis dari digit puluhannya (bilangan / 10) ditambah kata "puluh", dan jika satuannya bukan nol, kata satuan diambil dari sKapital, sehingga 47 tampil sebagai "empat puluh Tujuh". Angka 100 dicetak sebagai "seratus", sedangkan angka di luar rentang 0 sampai 100 menampilkan pesan bahwa input tidak valid.
+Kode program tersebut memanfaatkan prosedur tambahan Pointer() dan Reference() untuk memproses pergeseran nilai variabel, yang masing-masing menerapkan simbol pointer (*) untuk manipulasi alamat memori dan simbol reference (&) sebagai alias variabel. Program dirancang untuk menggeser posisi nilai dari tiga variabel integer secara berurutan menggunakan dua pendekatan pengiriman parameter tersebut. Pada fungsi utama, tiga nilai input dari user disimpan pada variabel x, y, dan z. Pemanggilan prosedur Pointer() dilakukan dengan mengirimkan alamat memori variabel (&x, &y, &z), lalu nilainya diakses dan digeser menggunakan operator *dereference* (*). Selanjutnya, prosedur Reference() dipanggil untuk melakukan pergeseran nilai serupa dengan memanfaatkan parameter reference (&) sehingga variabel dapat dimanipulasi secara langsung tanpa perlu operator khusus, kemudian output dicetak ke layar.  
 
 
 ### 3. (isi dengan soal unguided 3)
@@ -490,21 +488,25 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 3_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output3.png)
+![Screenshot Output Unguided 3_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided3.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 3_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%201/Output%20Latihan/Output3(1).png)
+![Screenshot Output Unguided 3_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided3(1).png)
 
 Penjelasan unguided 3 :
-Program ini mencetak pola segitiga terbalik simetris yang tersusun dari bilangan asli dan tanda bintang. Pada baris pertama, angka menurun dari nilai input hingga 1, diikuti tanda bintang, lalu angka menaik dari 1 kembali ke nilai input. Baris-baris berikutnya memakai pola yang sama dengan angka yang makin sedikit dan posisi yang makin menjorok ke kanan, hingga baris terakhir hanya berisi bintang. Secara teknis, perulangan luar dengan variabel i berjalan dari a sampai 0 untuk menentukan jumlah baris. Di dalamnya, perulangan pertama mencetak spasi sebanyak a - i sebagai indentasi, perulangan kedua mencetak angka menurun dari i ke 1 lalu tanda bintang, dan perulangan ketiga mencetak angka menaik dari 1 ke i.
+Pada nomor 3 ini, diminta membuat program array satu dimensi, kemudian menampilkan data berdasarkan banyaknya menu, meliputi pencarian nilai tertinggi, terendah, dan rata-rata nilai array. Program ini menggunakan beberapa function dan procedure tambahan, yaitu searchMax(), searchMin(), rerata(), dan tampilkan().
+
+Pada main program, data disimpan dalam array arrA dan ukurannya dihitung secara otomatis. Perulangan do-while digunakan sebagai pengulangan pilihan menu supaya terus muncul selama nilai menu != 0, sedangkan switch-case bertugas mengarahkan alur ke fungsi atau prosedur sesuai angka menu yang dipilih. Ketika menu dijalankan, prosedur tampilkan() akan mencetak isi array, fungsi searchMax() dan searchMin() mencari nilai paling besar dan kecil pakai iterasi for, lalu prosedur rerata() menghitung rata-ratanya dan menyimpan hasilnya ke variabel rata_rata lewat parameter pointer *hasil.
 
 ## Kesimpulan
-Dari praktikum ini, saya memperoleh pemahaman awal mengenai dasar-dasar bahasa C++, seperti operator aritmatika, percabangan, perulangan, struct, array, dan fungsi. Karena pada semester sebelumnya saya menggunakan bahasa Go, saya masih memerlukan waktu untuk menyesuaikan diri, terutama pada aturan penulisan sintaks dan penggunaan operator yang berbeda. Meskipun demikian, setelah mengerjakan latihan pada modul ini, pemahaman saya terhadap cara kerja C++ menjadi lebih baik.
+Berdasarkan materi praktikum Pengenalan Bahasa C++ yang meliputi Array, Array 1 dimensi, Array 2 dimensi, Array Multidimensi, serta Pointer dan Reference, saya belajar bagaimana mengelola alokasi memori dan mengorganisasikan sekumpulan data bertipe seragam secara terstruktur serta modular. Melalui praktikum ini, saya memahami pengelompokan data homogen ke dalam variabel berbasis indeks mulai dari angka nol, baik secara linear pada array satu dimensi maupun berformat matriks baris dan kolom pada array dua dimensi dan multidimensi menggunakan perulangan bersarang (nested loop). Selain itu, saya mempelajari cara mengakses serta memanipulasi alamat memori fisik variabel menggunakan pointer dan reference tanpa duplikasi data, memahami perbedaan pengiriman parameter call by value, call by pointer, serta call by reference, hingga mampu menerapkan fungsi dan prosedur modular dalam menyelesaikan berbagai studi kasus pemrograman.
 
 ## Referensi
 
-[1] Satriani, S., Andriany, D., Rusmawati, R., Mima, M., Masnur, M., S, S., & Rinayanti Manullang, K. (2026). Pengenalan Struktur Data dan Perannya dalam Pemrograman. Jejak Digital: Jurnal Ilmiah Multidisiplin, 2(3), 4835-4848.
 <br>
-[2] Ritonga, A., & Yahfizham. (2023). Studi Literatur Perbandingan Bahasa Pemrograman C++ Dan Bahasa Pemrograman Python Pada Algoritma Pemrograman. Jurnal Teknik Informatika dan Teknologi Informasi (JUTITI), 3(3), 56–63.
+[1] L. J. E. Dewi, "Media Pembelajaran Bahasa Pemrograman C++," Jurnal Pendidikan Teknologi dan Kejuruan (JPTK) UNDIKSHA, vol. 7, no. 1, pp. 63–72, Jan. 2010. 
 <br>
+[2] N. Tou, Bahan Ajar Dasar-Dasar Pemrograman. Balunijuk: Jurusan Teknologi Informasi, Universitas Bangka Belitung, 2022.
+[3] L. J. E. Dewi, "Media Pembelajaran Bahasa Pemrograman C++," Jurnal Pendidikan Teknologi dan Kejuruan (JPTK) UNDIKSHA, vol. 7, no. 1, pp. 63–72, Jan. 2010.
+[4] G. A. A. D. Indradewi, I. M. O. Widyantara, dan A. A. K. O. Sudana, "Sistem Visualisasi Eksekusi Pointer pada Pemrograman C++," Lontar Komputer: Jurnal Ilmiah Teknologi Informasi, vol. 6, no. 3, pp. 182–191, Des. 2015.
