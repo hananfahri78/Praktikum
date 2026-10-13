@@ -7,11 +7,8 @@
 ### A. Abstract Data Type Pengertian <br/>
 ADT atau Abstract Data Type mendefinisikan kelas objek abstrak yang sepenuhnya dicirikan oleh operasi yang tersedia pada objek-objek tersebut. Ini berarti bahwa tipe data abstrak bisa didefinisikan dengan mendefinisikan operasi-operasi yang menjadi ciri khas dari tipe itu. [1].
 
-#### 1. Array 1 Dimensi
-Array satu dimensi mengelompokkan elemen-elemen data bertipe seragam ke dalam satu variabel berformat satu baris. Seluruh nilai yang tersimpan di dalamnya terbagi ke dalam beberapa kolom dan dipanggil menggunakan nomor indeks berbasis nol [2, hal. 29].
-
 #### 2. Array 2 Dimensi
-Array dua dimensi merupakan kumpulan alokasi memori bertipe data sama yang disusun dalam bentuk baris dan kolom menyerupai matriks, di mana setiap elemennya diakses menggunakan dua nomor indeks penunjuk [3, hal. 70].
+Array dua dimensi merupakan kumpulan alokasi memori bertipe data sama yang disusun dalam bentuk baris dan kolom menyerupai matriks, di mana setiap elemennya diakses menggunakan dua nomor indeks penunjuk [3].
 
 #### 3. Array Multidimensi
 Array multidimensi merupakan struktur data yang terbentuk dari penggabungan beberapa array satu dimensi sehingga mampu mengorganisasikan data dalam bentuk baris dan kolom. Karena memiliki tata letak dua arah seperti tabel, struktur ini sering disebut sebagai matriks dan difungsikan untuk menyimpan sekumpulan data berdimensi lebih dari satu [2, hal. 29].
@@ -81,11 +78,15 @@ int main() {
 }
 ```
 
-Program ini mengimplementasikan pengolahan array satu dimensi dan dua dimensi secara bersamaan menggunakan konstanta MAX berukuran 5 sebagai batas ukuran data. Program menggunakan variabel i dan j bertipe integer sebagai pemegang indeks perulangan, array nilai bertipe float berukuran 5 untuk menampung input nilai siswa, serta array dua dimensi nilai_tahun bertipe integer statis yang telah diinisialisasi secara langsung dengan data matriks berukuran 5x5. Proses eksekusi dimulai dengan perulangan for dari i = 0 hingga i < MAX yang meminta input lima nilai siswa dari pengguna dan menyimpannya ke dalam array nilai, diikuti dengan perulangan for kedua untuk menampilkan data nilai siswa tersebut kembali ke layar. Terakhir, program memanfaatkan perulangan bersarang (nested loop) di mana perulangan i mengontrol perpindahan baris dan perulangan j mencetak tiap elemen array nilai_tahun per kolom, sehingga seluruh matriks dua dimensi berhasil ditampilkan ke layar dalam struktur baris dan kolom yang rapi.
+Program di atas adalah implementasi pemrograman modular menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa secara sederhana. Terdapat tiga file pada pengerjaan praktikum ini, mahasiswa.h berfungsi sebagai cetak biru (blueprint) yang berisi definisi struct mahasiswa (untuk menampung data NIM dan dua buah nilai) serta deklarasi prototipe fungsi dan prosedur agar bisa diakses oleh file lain. Dilengkapi juga dengan header guard (#ifndef) untuk mencegah duplikasi deklarasi, lalu diakhiri (#endif) pada file tersebut.
+
+Selanjutnya, mahasiswa.cpp Berisi penjabaran kode nyata dari fungsi dan prosedur yang sebelumnya dideklarasikan. Di dalamnya terdapat prosedur inputMhs untuk meminta input NIM serta dua nilai dari pengguna, dan fungsi rata2 untuk menghitung serta mengembalikan nilai rata-rata dari kedua nilai tersebut dalam bentuk bilangan desimal (float).
+
+Terkahir, main.cpp Berperan sebagai pusat eksekusi program. Bagian ini membuat sebuah objek mhs dari struct mahasiswa, memanggil prosedur input data, lalu memproses dan menampilkan hasil perhitungan rata-rata ke layar konsol.
 
 ## Unguided
 
-### 1. Operasi Matematika Dasar (Penjumlahan, Pengurangan, dan Perkalian)
+### 1. Menghitung Nilai Akhir Mahasiswa Berdasarkan Nilai (UTS, UAS, dan NILAI TUGAS)
 
 #### nilaiMahasiswa.h
 
@@ -190,15 +191,20 @@ int main() {
 ![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided1(1).png)
 
 Penjelasan unguided 1 :
-Membuat program untuk mengolah operasi aritmetika matriks berukuran 3x3 yang mencakup penjumlahan, pengurangan, dan perkalian melalui antarmuka menu interaktif. Pada main program, perulangan do-while dipadukan dengan percabangan switch-case untuk mengatur alur pilihan menu. Perulangan do-while berfungsi menjaga agar tampilan menu terus muncul berulang kali dengan mengeksekusi blok program terlebih dahulu baru kemudian mengevaluasi kondisi menu != 0 di akhir, sedangkan switch-case bertugas mengarahkan alur eksekusi program ke prosedur perhitungan yang sesuai berdasarkan nilai angka menu yang diinputkan pengguna. Setelah opsi dipilih, program menjalankan prosedur Input() untuk menerima input angka pada matriks X dan Y, memprosesnya melalui prosedur penjumlahan(), pengurangan(), atau perkalian(), lalu menyimpan hasilnya ke matriks Z sebelum dicetak ke layar lewat prosedur tampilkanOutput().
+Pada program penghitungan nilai akhir mahasiswa ini menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa secara lebih lengkap menggunakan array of struct. Terdapat tiga file pada pengerjaan program ini, di mana nilaiMahasiswa.h berfungsi sebagai cetak biru (blueprint) yang berisi definisi struct mahasiswa (untuk menampung data Nama, NIM, komponen nilai UTS, UAS, Tugas, serta nilai akhir) dan deklarasi prototipe fungsi serta prosedur agar bisa diakses oleh file lain. File ini juga dilengkapi dengan header guard (#ifndef) untuk mencegah duplikasi deklarasi, lalu diakhiri dengan (#endif) pada file tersebut.
+
+Selanjutnya, nilaiMahasiswa.cpp berisi penjabaran kode nyata dari fungsi dan prosedur yang sebelumnya dideklarasikan. Di dalamnya terdapat prosedur inputMahasiswa yang berfungsi untuk meminta input data diri dan nilai dari pengguna, fungsi Nilai_Akhir untuk menghitung akumulasi nilai berdasarkan bobot yang ditentukan, serta prosedur tampilDataMahasiswa untuk mencetak informasi akhir mahasiswa dengan format yang rapi.
+
+Terakhir, main.cpp berperan sebagai pusat eksekusi program. Bagian ini membuat array of struct berukuran maksimal 10 data untuk menyimpan informasi tentang banyak mahasiswa, meminta jumlah data yang akan dimasukkan, kemudian memanggil prosedur untuk memasukkan data, melaksanakan perhitungan nilai akhir, dan menampilkan ringkasan hasilnya di layar konsol.
 
 
-### 2. Menukar nilai variabel (Pointer dan Reference)
+### 2. Menyetak Nama Mapel serta Kode Mapel Menggunakan ADT 
 
 #### pelajaran.h
 
 ```C++
 #ifndef PELAJARAN
+#define PELAJARAN
 #include <string>
 #include <iostream>
 using namespace std;
@@ -259,96 +265,94 @@ Penjelasan unguided 2 :
 Kode program tersebut memanfaatkan prosedur tambahan Pointer() dan Reference() untuk memproses pergeseran nilai variabel, yang masing-masing menerapkan simbol pointer (*) untuk manipulasi alamat memori dan simbol reference (&) sebagai alias variabel. Program dirancang untuk menggeser posisi nilai dari tiga variabel integer secara berurutan menggunakan dua pendekatan pengiriman parameter tersebut. Pada fungsi utama, tiga nilai input dari user disimpan pada variabel x, y, dan z. Pemanggilan prosedur Pointer() dilakukan dengan mengirimkan alamat memori variabel (&x, &y, &z), lalu nilainya diakses dan digeser menggunakan operator *dereference* (*). Selanjutnya, prosedur Reference() dipanggil untuk melakukan pergeseran nilai serupa dengan memanfaatkan parameter reference (&) sehingga variabel dapat dimanipulasi secara langsung tanpa perlu operator khusus, kemudian output dicetak ke layar.  
 
 
-### 3. (isi dengan soal unguided 3)
+### 3. Matriks 3x3
 
-#### dlsjf.h
+#### array2D.h
+
+```C++
+#ifndef ARRAY_2_D
+#define ARRAY_2_D
+#include <iostream>
+
+void tampilArray(int arr[3][3]);
+void tukarPosisi(int arr1[3][3], int arr2[3][3], int baris, int kolom);
+void tukarPointer(int *p1, int *p2);
+
+#endif
+```
+
+#### array2D.cpp
+
+```C++
+#include "array2D.h"
+#include <iostream>
+
+using namespace std;
+
+
+void tampilArray(int arr[3][3]){
+    for (int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+void tukarPosisi(int arr1[3][3], int arr2[3][3], int baris, int kolom) {
+    int temp = arr1[baris][kolom];
+    arr1[baris][kolom] = arr2[baris][kolom];
+    arr2[baris][kolom] = temp;
+
+}
+
+void tukarPointer(int *p1, int *p2){
+    int temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+}
+```
+
+#### main.cpp
 
 ```C++
 #include <iostream>
+#include "array2D.h"
+
 using namespace std;
 
-int searchMax(int arr[], int n) { 
-    int max = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
-    }
-
-    return max;
-}
-
-int searchMin(int arr[], int n) {
-    int min = arr[0];
-    for (int i = 1; i < n; i++) {
-        if (arr[i] < min) {
-            min = arr[i];
-        }
-    }
-    return min;
-
-}
-
-void rerata(int arr[], int n, double *hasil) {
-    double total = 0;
-    for (int i = 0; i < n; i++) {
-        total += arr[i];
-    }
-    *hasil = total / n;
-}
-
-void tampilkan(int arr[], int n) {
-    cout << "Isi Array : ";
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-    
-}
-
 int main() {
-    int arrA[] = {48, 2, 7, 21, 5, 20, 77, 9, 10, 1};
-    int menu;
-    int n = sizeof(arrA) / sizeof(arrA[0]);
-    double rata_rata;
-    
-    do {
-    cout << "--- Menu Program Array ---" << endl;
-    cout << "1. Tampilkan isi array" << endl;
-    cout << "2. Cari nilai maksimum" << endl;
-    cout << "3. Cari nilai minimum" << endl;
-    cout << "4. Hitung nilai rata-rata" << endl;
-    cout << "0. Exit\n" << endl;
-    
-    cout << "Pilih menu : ";
-    cin >> menu;
+    int arr1[3][3] = {{10, 11, 12}, {20, 19, 18}, {13, 14, 15}};
+    int arr2[3][3] = {{8, 9, 10}, {3, 2, 1}, {4, 5, 6}};
 
-    switch (menu){
-        case 1:
-            tampilkan(arrA, n);
-            break;
-        case 2:
-            cout << "Nilai Maksimum array = " << searchMax(arrA, n) << endl;
-            break;
-        case 3:
-            cout << "Nilai Minimum array = " << searchMin(arrA, n) << endl;
-            break;
-        case 4:
-            rerata(arrA, n, &rata_rata);
-            cout << "Nilai Rata-rata = " << rata_rata << endl; 
-            break;
-        case 0:
-            cout << "Terima kasih telah menggunakan aplikasi kami" << endl;
-            break;
-    
-    default:
-        cout << "Input menu tidak valid! Silakan coba lagi!" << endl;
-        break;
-    }
+    int x = 5; int y = 10;
+    int *p1 = &x;
+    int *p2 = &y;
 
-    } while(menu != 0);
+    cout << "Array 1 awal :\n";
+    tampilArray(arr1);
+
+    cout << "Array 2 awal :\n";
+    tampilArray(arr2);
+
+    tukarPosisi(arr1, arr2, 1, 1);
+
+    cout << "Sesudah Tukar Array" << endl;
+    cout << "Array 1 :\n";
+    tampilArray(arr1);
+    cout << "Array 2 :\n";
+    tampilArray(arr2);
+
+    cout << "Sebelum Tukar Nilai Pointer :" << endl;
+    cout << "Pointer 1 : " << *p1 << " Pointer 2 : " << *p2 << endl;
+
+    tukarPointer(p1, p2);
+
+    cout << "Sesudah Tukar Nilai Pointer" << endl;
+    cout << "Pointer 1 : " << *p1 << " Pointer 2 : " << *p2 << endl;
+
 
     return 0;
+
 }
 ```
 
