@@ -7,21 +7,34 @@
 ### A. Abstract Data Type Pengertian <br/>
 ADT atau Abstract Data Type mendefinisikan kelas objek abstrak yang sepenuhnya dicirikan oleh operasi yang tersedia pada objek-objek tersebut. Ini berarti bahwa tipe data abstrak bisa didefinisikan dengan mendefinisikan operasi-operasi yang menjadi ciri khas dari tipe itu. [1].
 
-#### 2. Array 2 Dimensi
-Array dua dimensi merupakan kumpulan alokasi memori bertipe data sama yang disusun dalam bentuk baris dan kolom menyerupai matriks, di mana setiap elemennya diakses menggunakan dua nomor indeks penunjuk [3].
+### B. Primitif pada ADT<br/>
+Tipe data Primitif pada ADT diterjemahkan pada beberapa jenis fungsi dan prosedur, antara lain:
 
-#### 3. Array Multidimensi
-Array multidimensi merupakan struktur data yang terbentuk dari penggabungan beberapa array satu dimensi sehingga mampu mengorganisasikan data dalam bentuk baris dan kolom. Karena memiliki tata letak dua arah seperti tabel, struktur ini sering disebut sebagai matriks dan difungsikan untuk menyimpan sekumpulan data berdimensi lebih dari satu [2, hal. 29].
+#### 1. Konstruktor/Kreator
+Pembentuk nilai tipe. Semua objek (variabel) bertipe tersebut harus melalui konstruktor. Biasanya namanya diawali Make.
 
-Proses pendeklarasian array multidimensi pada dasarnya mirip dengan array satu dimensi, tetapi membutuhkan dua pasang kurung siku sebagai petunjuk penomoran indeks. Pasangan kurung siku pertama dipakai untuk menentukan alokasi elemen baris, sedangkan kurung siku kedua digunakan untuk mendefinisikan posisi kolom [2, hal. 30].
+#### 2. Selector
+Berfungsi untuk mengakses komponen tipe (biasanya namanya diawali Get).
 
-### B. Pointer dan Reference<br/>
+#### 3. Prosedur Pengubah 
+Digunakan untuk mengubah nilai komponen pada suatu ADT.
 
-#### 1. Pointer
-Pointer merupakan variabel khusus yang digunakan untuk menyimpan alamat memori fisik dari suatu nilai atau variabel lain. Berbeda dengan variabel biasa yang menyimpan nilai secara langsung, pointer bekerja dengan menyimpan alokasi alamat memori sehingga memungkinkan akses dan pengolahan data secara langsung pada memori utama untuk meningkatkan efisiensi eksekusi program [4, hal. 183].
+#### 4. Tipe Validator Komponen 
+Dipakai untuk menguji apakah dapat membentuk tipe sesuai dengan batasan.
 
-#### 2. Reference
-Reference merupakan alias atau nama sekunder yang merujuk secara langsung ke lokasi/alamat memori dari suatu variabel yang sudah dideklarasikan sebelumnya . Penggunaan reference mempermudah manipulasi variabel asli tanpa perlu membuat duplikasi data baru di dalam memori, sehingga penggunaan alokasi memori menjadi lebih efisien [4, hal. 184].
+#### 5. Destruktor
+Berfungsi untuk menghancurkan nilai variabel (sekaligus memori penyimpanannya).
+
+#### 6. Baca/Tulis
+Sebagai antarmuka (interface) dengan perangkat masukan/keluaran (input/output).
+
+#### 7. Operator relasional
+Mendefinisikan lebih besar, lebih kecil, sama dengan, dan sebagainya.
+
+#### 8. Aritmetika
+Biasanya aritmetika dalalm bahasa C hanya terdefinisi untuk bilangan numerik.
+
+#### 9. Konversi dari tipe tersebut ke tipe dasar dan sebaliknya.
 
 ## Guided
 
@@ -183,12 +196,12 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided1.png)
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided1.png)
 
 
 ##### Output 2
 
-![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided1(1).png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided1(1).png)
 
 Penjelasan unguided 1 :
 Pada program penghitungan nilai akhir mahasiswa ini menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa secara lebih lengkap menggunakan array of struct. Terdapat tiga file pada pengerjaan program ini, di mana nilaiMahasiswa.h berfungsi sebagai cetak biru (blueprint) yang berisi definisi struct mahasiswa (untuk menampung data Nama, NIM, komponen nilai UTS, UAS, Tugas, serta nilai akhir) dan deklarasi prototipe fungsi serta prosedur agar bisa diakses oleh file lain. File ini juga dilengkapi dengan header guard (#ifndef) untuk mencegah duplikasi deklarasi, lalu diakhiri dengan (#endif) pada file tersebut.
@@ -255,15 +268,18 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 2_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided2.png)
+![Screenshot Output Unguided 2_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided2.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 2_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided2(1).png)
+![Screenshot Output Unguided 2_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided2(1).png)
 
 Penjelasan unguided 2 :
-Kode program tersebut memanfaatkan prosedur tambahan Pointer() dan Reference() untuk memproses pergeseran nilai variabel, yang masing-masing menerapkan simbol pointer (*) untuk manipulasi alamat memori dan simbol reference (&) sebagai alias variabel. Program dirancang untuk menggeser posisi nilai dari tiga variabel integer secara berurutan menggunakan dua pendekatan pengiriman parameter tersebut. Pada fungsi utama, tiga nilai input dari user disimpan pada variabel x, y, dan z. Pemanggilan prosedur Pointer() dilakukan dengan mengirimkan alamat memori variabel (&x, &y, &z), lalu nilainya diakses dan digeser menggunakan operator *dereference* (*). Selanjutnya, prosedur Reference() dipanggil untuk melakukan pergeseran nilai serupa dengan memanfaatkan parameter reference (&) sehingga variabel dapat dimanipulasi secara langsung tanpa perlu operator khusus, kemudian output dicetak ke layar.  
+Program ini menerapkan konsep Abstract Data Type (ADT) pada C++ untuk mengelola data mata pelajaran, dan terdiri dari tiga file. File pelajaran.h memuat struct pelajaran yang menyimpan nama dan kode mata pelajaran, beserta prototipe fungsi dan prosedurnya. Di file ini juga terdapat header guard (#ifndef, #define, dan #endif) agar deklarasi tidak terduplikasi ketika file di-include lebih dari satu kali.
 
+File pelajaran.cpp berisi implementasi dari fungsi dan prosedur yang sudah dideklarasikan. Fungsi create_pelajaran menerima parameter nama dan kode mata pelajaran, lalu mengembalikan struct pelajaran yang berisi kedua data itu. Prosedur tampil_pelajaran digunakan untuk menampilkan isinya ke layar.
+
+File main.cpp berisi program utama. Nama mata pelajaran “Analisis Kompleksitas Algoritma” dan kode “AKA” dikirim ke fungsi create_pelajaran, kemudian hasilnya ditampilkan melalui prosedur tampil_pelajaran.
 
 ### 3. Matriks 3x3
 
@@ -360,27 +376,24 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 3_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided3.png)
+![Screenshot Output Unguided 3_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided3.png)
 
 ##### Output 2
 
-![Screenshot Output Unguided 3_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%202/Output%20Latihan/Output_UnGuided3(1).png)
+![Screenshot Output Unguided 3_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided3%7B1%7D.png)
 
 Penjelasan unguided 3 :
-Pada nomor 3 ini, diminta membuat program array satu dimensi, kemudian menampilkan data berdasarkan banyaknya menu, meliputi pencarian nilai tertinggi, terendah, dan rata-rata nilai array. Program ini menggunakan beberapa function dan procedure tambahan, yaitu searchMax(), searchMin(), rerata(), dan tampilkan().
+Program ini menerapkan array dua dimensi dan pointer pada C++ yang dibagi menjadi tiga file. File array2D.h memuat deklarasi tiga fungsi, yaitu tampilArray, tukarPosisi, dan tukarPointer. Di file ini juga terdapat header guard (#ifndef, #define, dan #endif) agar deklarasi tidak terduplikasi ketika file di-include lebih dari satu kali.
 
-Pada main program, data disimpan dalam array arrA dan ukurannya dihitung secara otomatis. Perulangan do-while digunakan sebagai pengulangan pilihan menu supaya terus muncul selama nilai menu != 0, sedangkan switch-case bertugas mengarahkan alur ke fungsi atau prosedur sesuai angka menu yang dipilih. Ketika menu dijalankan, prosedur tampilkan() akan mencetak isi array, fungsi searchMax() dan searchMin() mencari nilai paling besar dan kecil pakai iterasi for, lalu prosedur rerata() menghitung rata-ratanya dan menyimpan hasilnya ke variabel rata_rata lewat parameter pointer *hasil.
+File array2D.cpp berisi implementasi dari ketiga fungsi tersebut. Fungsi tampilArray mencetak isi array berukuran 3x3 menggunakan perulangan bersarang. Fungsi tukarPosisi menukar elemen pada baris dan kolom tertentu antara dua array dengan bantuan variabel temp. Fungsi tukarPointer menukar nilai dari dua variabel melalui pointer, yaitu dengan mengakses nilainya menggunakan operator dereferensi (*).
+
+File main.cpp berisi program utama. Di sini dibuat dua array 3x3 (arr1 dan arr2) serta dua variabel, x bernilai 5 dan y bernilai 10, yang alamatnya disimpan pada pointer p1 dan p2. Kedua array ditampilkan terlebih dahulu, lalu elemen pada baris 1 kolom 1 ditukar sehingga nilai 19 pada arr1 berpindah ke arr2, dan nilai 2 pada arr2 berpindah ke arr1. Setelah itu nilai pada p1 dan p2 ditukar, sehingga p1 menjadi 10 dan p2 menjadi 5, lalu hasilnya ditampilkan ke layar.
 
 ## Kesimpulan
-Berdasarkan materi praktikum Pengenalan Bahasa C++ yang meliputi Array, Array 1 dimensi, Array 2 dimensi, Array Multidimensi, serta Pointer dan Reference, saya belajar bagaimana mengelola alokasi memori dan mengorganisasikan sekumpulan data bertipe seragam secara terstruktur serta modular. Melalui praktikum ini, saya memahami pengelompokan data homogen ke dalam variabel berbasis indeks mulai dari angka nol, baik secara linear pada array satu dimensi maupun berformat matriks baris dan kolom pada array dua dimensi dan multidimensi menggunakan perulangan bersarang (nested loop). Selain itu, saya mempelajari cara mengakses serta memanipulasi alamat memori fisik variabel menggunakan pointer dan reference tanpa duplikasi data, memahami perbedaan pengiriman parameter call by value, call by pointer, serta call by reference, hingga mampu menerapkan fungsi dan prosedur modular dalam menyelesaikan berbagai studi kasus pemrograman.
+Kesimpulan dari praktikum Modul 3 ini, saya belajar mengenai konsep Abstract Data Type (ADT). Saya menjadi lebih tahu bahwa ADT merupakan konsep dasar yang akan sering digunakan saat praktikum maupun saat membuat real project. Dari modul ADT ini, saya juga berlatih menggunakan array dua dimensi, struct, array satu dimensi secara bersamaan. Serta ilmu baru tentang cara pengerjaan praktikum ini, dengan memisahkan program ke dalam file header (.h), file implementasi (namafile.cpp), dan program utama (main.cpp).
 
 ## Referensi
 
 <br>
 [1] B. Liskov and S. Zilles, "Programming with abstract data types," ACM SIGPLAN Notices, vol. 9, no. 4, hal. 50–59, Apr. 1974. 
 <br>
-[2] N. Tou, Bahan Ajar Dasar-Dasar Pemrograman. Balunijuk: Jurusan Teknologi Informasi, Universitas Bangka Belitung, 2022.
-<br>
-[3] L. J. E. Dewi, "Media Pembelajaran Bahasa Pemrograman C++," Jurnal Pendidikan Teknologi dan Kejuruan (JPTK) UNDIKSHA, vol. 7, no. 1, pp. 63–72, Jan. 2010.
-<br>
-[4] G. A. A. D. Indradewi, I. M. O. Widyantara, dan A. A. K. O. Sudana, "Sistem Visualisasi Eksekusi Pointer pada Pemrograman C++," Lontar Komputer: Jurnal Ilmiah Teknologi Informasi, vol. 6, no. 3, pp. 182–191, Des. 2015.
