@@ -316,36 +316,39 @@ void insertFirst(List &L, address P);
 
 #### Singlylist.cpp
 ```C++
-#include "nilaiMahasiswa.h"
+#include "Singlylist.h"
 
-void inputMahasiswa(mahasiswa &mhs) {
-    cout << "Nama : ";
-    cin >> mhs.Nama;
 
-    cout << "NIM : ";
-    cin >> mhs.Nim;
-
-    cout << "Nilai Uts : ";
-    cin >> mhs.uts;
-
-    cout << "Nilai UAS : ";
-    cin >> mhs.uas;
-
-    cout << "Nilai Tugas : ";
-    cin >> mhs.tugas;
+void createList(List &L) {
+    L.First = Nil;
 }
 
-float Nilai_Akhir(mahasiswa &mhs) {
-
-    float NilaiAkhir;
-    NilaiAkhir = (0.3 * mhs.uts) + (0.4 * mhs.uas) + (0.3 * mhs.tugas);
-
-    return NilaiAkhir;
+address alokasi(infotype x) {
+    address P = new Elmlist;
+    P->info = x;
+    P->next = Nil;
+    return P;
 }
 
-void tampilDataMahasiswa(mahasiswa mhs) {
-    cout << mhs.Nama << " (" << mhs.Nim <<") " << "Nilai Akhir = "<< mhs.nilaiAkhir << endl;
+void dealokasi(address &P) {
+    delete P;
+    P = Nil;
 }
+
+void printInfo(List L) {
+    address P = L.First;
+    while (P != Nil) {
+        cout << P->info << " ";
+        P = P->next;
+    }
+    cout << endl;
+}
+
+void insertFirst(List &L, address P) {
+    P->next = L.First;
+    L.First = P;
+}
+
 
 ```
 
