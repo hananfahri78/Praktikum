@@ -384,22 +384,24 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided1.png)
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%204/Output%20UnGuided/UnGuided1.png)
 
 
 ##### Output 2
 
-![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%203/Output_UnGuided/Output_UnGuided1(1).png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%204/Output%20UnGuided/UnGuided1(1).png)
 
 Penjelasan unguided 1 :
-Pada program penghitungan nilai akhir mahasiswa ini menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa secara lebih lengkap menggunakan array of struct. Terdapat tiga file pada pengerjaan program ini, di mana nilaiMahasiswa.h berfungsi sebagai cetak biru (blueprint) yang berisi definisi struct mahasiswa (untuk menampung data Nama, NIM, komponen nilai UTS, UAS, Tugas, serta nilai akhir) dan deklarasi prototipe fungsi serta prosedur agar bisa diakses oleh file lain. File ini juga dilengkapi dengan header guard (#ifndef) untuk mencegah duplikasi deklarasi, lalu diakhiri dengan (#endif) pada file tersebut.
+Program ini mengimplementasikan struktur data singly linked list menggunakan konsep Abstract Data Type (ADT) dalam bahasa C++, dengan tujuan menyimpan dan menampilkan lima buah bilangan bulat. Implementasinya dibagi ke dalam tiga file terpisah agar deklarasi, isi fungsi, dan alur program tidak tercampur. 
 
-Selanjutnya, nilaiMahasiswa.cpp berisi penjabaran kode nyata dari fungsi dan prosedur yang sebelumnya dideklarasikan. Di dalamnya terdapat prosedur inputMahasiswa yang berfungsi untuk meminta input data diri dan nilai dari pengguna, fungsi Nilai_Akhir untuk menghitung akumulasi nilai berdasarkan bobot yang ditentukan, serta prosedur tampilDataMahasiswa untuk mencetak informasi akhir mahasiswa dengan format yang rapi.
+File Singlylist.h berfungsi sebagai kerangka dasar program. Di dalamnya terdapat definisi struct Elmlist yang menampung data (info) dan pointer ke node berikutnya (next), serta struct List yang memuat pointer First sebagai penanda node pertama. File ini juga memuat deklarasi prototipe fungsi dan Nil sebagai representasi NULL.
 
-Terakhir, main.cpp berperan sebagai pusat eksekusi program. Bagian ini membuat array of struct berukuran maksimal 10 data untuk menyimpan informasi tentang banyak mahasiswa, meminta jumlah data yang akan dimasukkan, kemudian memanggil prosedur untuk memasukkan data, melaksanakan perhitungan nilai akhir, dan menampilkan ringkasan hasilnya di layar konsol.
+Isi dari fungsi-fungsi yang telah dideklarasikan tersebut ditulis pada file Singlylist.cpp. Prosedur createList menginisialisasi list menjadi kosong, fungsi alokasi membuat node baru menggunakan new, dan prosedur insertFirst menyisipkan node baru di bagian paling depan list. Selain itu, prosedur printInfo menelusuri node dari First sampai Nil sambil mencetak isinya ke layar.
+
+Terakhir, file main.cpp menjadi pusat eksekusi program. Pada bagian ini, angka 2, 0, 8, 12, dan 9 dialokasikan satu per satu lalu dimasukkan menggunakan insertFirst. Karena setiap node baru ditempatkan di depan, urutan datanya berbalik dari urutan pemasukan, sehingga keluaran yang tampil di layar adalah 9 12 8 0 2.
 
 ## Kesimpulan
-Kesimpulan dari praktikum Modul 3 ini, saya belajar mengenai konsep Abstract Data Type (ADT). Saya menjadi lebih tahu bahwa ADT merupakan konsep dasar yang akan sering digunakan saat praktikum maupun saat membuat real project. Dari modul ADT ini, saya juga berlatih menggunakan array dua dimensi, struct, array satu dimensi secara bersamaan. Serta ilmu baru tentang cara pengerjaan praktikum ini, dengan memisahkan program ke dalam file header (.h), file implementasi (namafile.cpp), dan program utama (main.cpp).
+Kesimpulan dari praktikum Modul 4 mengenai Singly Linked List, saya belajar ternyata untuk menyimpan sebuah data tidak hanya dapat disimpan menggunakan array, tetapi bisa juga menggunakan node yang memanfaatkan memori, dan disambung seperti struktur kereta yang saling menyambung. Masih banyak kegagalan dalam membuat alur program SLL ini terutama saat memahami pointer dan cara menyambung antar node. Untuk ke depannya saya perlu lebih banyak latihan supaya lebih paham.
 
 ## Referensi
 
