@@ -4,37 +4,13 @@
 
 ## Dasar Teori
 
-### A. Singly Linked List <br/>
+### A. Linked List <br/>
 
+Linked list adalah struktur data yang menyimpan elemen dalam node, setiap node memuat isi value beserta alamat memori dari node selanjutnya (next), dan pada doubly linked list juga memuat satu pointer yang berisi alamat memori dari node sebelumnya (prev) [1]. Memori tiap node dialokasikan secara dinamis saat program berjalan, sehingga tidak selalu berurutan dan jumlah elemennya tidak tetap selama memori masih tersedia [1]. Akses ke suatu elemen harus dilakukan secara berurutan dari node awal yang biasa disebut head, sehingga lebih lambat daripada array. Sebaliknya, penambahan dan penghapusan lebih mudah karena cukup mengubah beberapa tautan node tanpa menggeser elemen lain [1].
 
-### B. Primitif pada ADT<br/>
-Tipe data Primitif pada ADT diterjemahkan pada beberapa jenis fungsi dan prosedur, antara lain:
+### B. Singly Linked List<br/>
 
-#### 1. Konstruktor/Kreator
-Pembentuk nilai tipe. Semua objek (variabel) bertipe tersebut harus melalui konstruktor. Biasanya namanya diawali Make.
-
-#### 2. Selector
-Berfungsi untuk mengakses komponen tipe (biasanya namanya diawali Get).
-
-#### 3. Prosedur Pengubah 
-Digunakan untuk mengubah nilai komponen pada suatu ADT.
-
-#### 4. Tipe Validator Komponen 
-Dipakai untuk menguji apakah dapat membentuk tipe sesuai dengan batasan.
-
-#### 5. Destruktor
-Berfungsi untuk menghancurkan nilai variabel (sekaligus memori penyimpanannya).
-
-#### 6. Baca/Tulis
-Sebagai antarmuka (interface) dengan perangkat masukan/keluaran (input/output).
-
-#### 7. Operator relasional
-Mendefinisikan lebih besar, lebih kecil, sama dengan, dan sebagainya.
-
-#### 8. Aritmetika
-Biasanya aritmetika dalalm bahasa C hanya terdefinisi untuk bilangan numerik.
-
-#### 9. Konversi dari tipe tersebut ke tipe dasar dan sebaliknya.
+Singly linked list merupakan model linked list yang hanya memiliki satu arah pointer, dalam satu node hanya memuat isi value dan (next) untuk alamat memori node berikutnya. Sedangkan node terkahir menunjuk ke Nil (NULL) sebagai penanda akhir list [2]. Pointer first atau head digunakan untuk menunjuk elemen pertama list [2]. Karena setiap node hanya menyimpan satu tautan (link) ke node berikutnya, penelusurannya hanya dapat dilakukan satu arah [3]. Pada metode singly linked list, penambahan atau penghapusan node yang berada di tengah list lebih mudah dilakukan [2]. 
 
 ## Guided
 
@@ -298,11 +274,11 @@ int main() {
 }
 ```
 
-Program di atas adalah implementasi pemrograman modular menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa secara sederhana. Terdapat tiga file pada pengerjaan praktikum ini, mahasiswa.h berfungsi sebagai cetak biru (blueprint) yang berisi definisi struct mahasiswa (untuk menampung data NIM dan dua buah nilai) serta deklarasi prototipe fungsi dan prosedur agar bisa diakses oleh file lain. Dilengkapi juga dengan header guard (#ifndef) untuk mencegah duplikasi deklarasi, lalu diakhiri (#endif) pada file tersebut.
+Program tersebut merupakan bentuk implementasi singly linked list menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa yang mencakup nama, NIM, dan umur. Pengerjaannya dibagi menjadi tiga file. File list.h berfungsi sebagai header atau kerangka program yang berisi definisi struct mahasiswa, struct node (menyimpan data mahasiswa dan pointer next), serta struct linkedlist yang memiliki pointer first sebagai penunjuk node pertama. Di dalamnya terdapat deklarasi prototipe fungsi dan prosedur, seperti isEmpty, createList, alokasi, dealokasi, insert, delete, printList, nbList, dan deletelist. Header guard (#ifndef) digunakan agar file tidak terbaca berulang, dan Nil didefinisikan sebagai NULL untuk menandai pointer yang tidak menunjuk ke mana pun.
 
-Selanjutnya, mahasiswa.cpp Berisi penjabaran kode nyata dari fungsi dan prosedur yang sebelumnya dideklarasikan. Di dalamnya terdapat prosedur inputMhs untuk meminta input NIM serta dua nilai dari pengguna, dan fungsi rata2 untuk menghitung serta mengembalikan nilai rata-rata dari kedua nilai tersebut dalam bentuk bilangan desimal (float).
+Selanjutnya, list.cpp memuat implementasi dari setiap fungsi dan prosedur yang telah dideklarasikan. Fungsi alokasi digunakan untuk membuat node baru menggunakan new dan mengisinya dengan data, sedangkan dealokasi membebaskan memori node tersebut. Untuk penambahan node terdapat insertFirst (awal list), insertAfter (setelah node tertentu), dan insertLast (akhir list, dengan melakukan penelusuran list sampai node terakhir). Sisanya, printList berfungsi untuk menampilkan semua isi list, nbList untuk menghitung total node, dan deletelist untuk menghapus semua node satu per satu hingga list menjadi kosong.
 
-Terkahir, main.cpp Berperan sebagai pusat eksekusi program. Bagian ini membuat sebuah objek mhs dari struct mahasiswa, memanggil prosedur input data, lalu memproses dan menampilkan hasil perhitungan rata-rata ke layar konsol.
+Terakhir, main.cpp digunakan sebagai pusat eksekusi program. Pada bagian ini dibuat sebuah list kosong, kemudian dialokasikan lima node berisi data Dhimas, Budi, Andi, Caca, dan Dewi. Kelima node tersebut dimasukkan ke list dengan kombinasi insertFirst, insertLast, dan insertAfter, sehingga urutan akhirnya menjadi Dhimas, Budi, Caca, Andi, lalu Dewi. Isi list ditampilkan bersama jumlah node-nya, yaitu lima, dan program diakhiri dengan deletelist untuk membebaskan seluruh memori yang digunakan.
 
 ## Unguided
 
@@ -338,7 +314,7 @@ void insertFirst(List &L, address P);
 #endif
 ```
 
-#### nilaiMahasiswa.cpp
+#### Singlylist.cpp
 ```C++
 #include "nilaiMahasiswa.h"
 
@@ -428,5 +404,8 @@ Kesimpulan dari praktikum Modul 3 ini, saya belajar mengenai konsep Abstract Dat
 ## Referensi
 
 <br>
-[1] B. Liskov and S. Zilles, "Programming with abstract data types," ACM SIGPLAN Notices, vol. 9, no. 4, hal. 50–59, Apr. 1974. 
+[1] M. R. Abu Sara, M. F. J. Klaib, dan M. Hasan, “Hybrid array list: An efficient dynamic array with linked list structure,” Indones. J. Comput., vol. 5, no. 3, hlm. 47–62, Des. 2021, doi: 10.34818/indojc.2021.5.3.527.
 <br>
+[2] Fakultas Informatika, Telkom University, “Modul 4: Singly linked list (bagian pertama),” dalam Modul Praktikum Struktur Data, Bandung, Indonesia: Telkom University, 2026, hlm. 36–46.
+<br>
+[3] A. O. Akinde, S. O. Okolie, dan S. O. Kuyoro, “The S-linked list—A variant of the linked list data structure,” J. Emerg. Trends Comput. Inf. Sci., vol. 4, no. 6, hlm. 571–576, Jun. 2013.
