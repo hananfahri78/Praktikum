@@ -662,16 +662,15 @@ int main() {
 
 ##### Output 1 Alokasi
 
-![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%204/Output%20UnGuided/UnGuided1.png)
-
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%205/Output%20UnGuided/OutputAlokasi(2).png)
 
 ##### Output 2 Find Element 
 
-![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%204/Output%20UnGuided/UnGuided1(1).png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%205/Output%20UnGuided/OutputFindElm(3).png)
 
 ##### Output 3 Total Value 
 
-![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%204/Output%20UnGuided/UnGuided1(1).png)
+![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%205/Output%20UnGuided/OutputTotalValue(4).png)
 
 Penjelasan unguided 1 :
 Program ini mengimplementasikan struktur data singly linked list menggunakan konsep Abstract Data Type (ADT) dalam bahasa C++, dengan tujuan menyimpan dan menampilkan lima buah bilangan bulat. Implementasinya dibagi ke dalam tiga file terpisah agar deklarasi, isi fungsi, dan alur program tidak tercampur. 
