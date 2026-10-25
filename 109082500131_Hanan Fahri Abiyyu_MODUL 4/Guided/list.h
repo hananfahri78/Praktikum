@@ -35,4 +35,5 @@ void delLast (linkedlist &list);
 void delAfter (linkedlist &list, address nodeHapus, address nodePrev);
 int nbList(linkedlist list);
 void deletelist (linkedlist &list);
+
 #endif
