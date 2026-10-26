@@ -4,13 +4,9 @@
 
 ## Dasar Teori
 
-### A. Linked List <br/>
+### A. Searching <br/>
 
-Linked list adalah struktur data yang menyimpan elemen dalam node, setiap node memuat isi value beserta alamat memori dari node selanjutnya (next), dan pada doubly linked list juga memuat satu pointer yang berisi alamat memori dari node sebelumnya (prev) [1]. Memori tiap node dialokasikan secara dinamis saat program berjalan, sehingga tidak selalu berurutan dan jumlah elemennya tidak tetap selama memori masih tersedia [1]. Akses ke suatu elemen harus dilakukan secara berurutan dari node awal yang biasa disebut head, sehingga lebih lambat daripada array. Sebaliknya, penambahan dan penghapusan lebih mudah karena cukup mengubah beberapa tautan node tanpa menggeser elemen lain [1].
-
-### B. Singly Linked List<br/>
-
-Singly linked list merupakan model linked list yang hanya memiliki satu arah pointer, dalam satu node hanya memuat isi value dan (next) untuk alamat memori node berikutnya. Sedangkan node terkahir menunjuk ke Nil (NULL) sebagai penanda akhir list [2]. Pointer first atau head digunakan untuk menunjuk elemen pertama list [2]. Karena setiap node hanya menyimpan satu tautan (link) ke node berikutnya, penelusurannya hanya dapat dilakukan satu arah [3]. Pada metode singly linked list, penambahan atau penghapusan node yang berada di tengah list lebih mudah dilakukan [2]. 
+Searching merupakan salah satu operasi dasar pada linked list yang dilakukan dengan cara mengunjungi setiap node secara berurutan dan berhenti setelah node yang dicari ditemukan, di mana keberadaan operasi ini dapat mempermudah jalannya proses lanjutan seperti insert after, delete after, dan update.
 
 ## Guided
 
@@ -507,7 +503,7 @@ int main() {
     // printList(List);
 
     // updateAfter(List, nodeC);
-    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE AFTER NODE B ---" << endl;
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE AFTER NODE C ---" << endl;
     // printList(List);
     
     updateByNim(List, "2211110014");
@@ -518,11 +514,9 @@ int main() {
 }
 ```
 
-Program tersebut merupakan bentuk implementasi singly linked list menggunakan konsep Abstract Data Type (ADT) dalam C++ untuk mengelola data mahasiswa yang mencakup nama, NIM, dan umur. Pengerjaannya dibagi menjadi tiga file. File list.h berfungsi sebagai header atau kerangka program yang berisi definisi struct mahasiswa, struct node (menyimpan data mahasiswa dan pointer next), serta struct linkedlist yang memiliki pointer first sebagai penunjuk node pertama. Di dalamnya terdapat deklarasi prototipe fungsi dan prosedur, seperti isEmpty, createList, alokasi, dealokasi, insert, delete, printList, nbList, dan deletelist. Header guard (#ifndef) digunakan agar file tidak terbaca berulang, dan Nil didefinisikan sebagai NULL untuk menandai pointer yang tidak menunjuk ke mana pun.
+Pada latihan ini saya membuat program untuk menyimpan data mahasiswa (nama, NIM, dan umur) dengan singly linked list. Setiap data disimpan dalam satu node bersama pointer ke node berikutnya, jadi seluruh data bisa ditelusuri berurutan dari node pertama.
 
-Selanjutnya, list.cpp memuat implementasi dari setiap fungsi dan prosedur yang telah dideklarasikan. Fungsi alokasi digunakan untuk membuat node baru menggunakan new dan mengisinya dengan data, sedangkan dealokasi membebaskan memori node tersebut. Untuk penambahan node terdapat insertFirst (awal list), insertAfter (setelah node tertentu), dan insertLast (akhir list, dengan melakukan penelusuran list sampai node terakhir). Sisanya, printList berfungsi untuk menampilkan semua isi list, nbList untuk menghitung total node, dan deletelist untuk menghapus semua node satu per satu hingga list menjadi kosong.
-
-Terakhir, main.cpp digunakan sebagai pusat eksekusi program. Pada bagian ini dibuat sebuah list kosong, kemudian dialokasikan lima node berisi data Dhimas, Budi, Andi, Caca, dan Dewi. Kelima node tersebut dimasukkan ke list dengan kombinasi insertFirst, insertLast, dan insertAfter, sehingga urutan akhirnya menjadi Dhimas, Budi, Caca, Andi, lalu Dewi. Isi list ditampilkan bersama jumlah node-nya, yaitu lima, dan program diakhiri dengan deletelist untuk membebaskan seluruh memori yang digunakan.
+Di bagian utama, saya membuat list kosong lalu menyiapkan lima node untuk Dhimas, Arvin, Rizal, Satrio, dan Joshua. Dhimas dimasukkan lebih dulu dengan insertFirst, Arvin ditaruh di akhir dengan insertLast, Rizal dan Satrio disisipkan setelah node yang sudah ada dengan insertAfter, dan Joshua ditambahkan di akhir. Urutan list jadi Dhimas, Rizal, Satrio, Arvin, Joshua, lalu isinya dicetak bersama jumlah node untuk memastikan semuanya masuk dengan benar. Setelah list terbentuk, saya menjalankan tiga operasi update secara bergantian. updateLast mengubah data pada node terakhir, updateAfter mengubah data pada node yang berada tepat setelah node yang ditentukan, dan updateByNim mengubah data pada node yang NIM-nya cocok dengan yang dicari. Pada ketiganya, nama, NIM, dan umur baru dimasukkan lewat input, lalu isi list dicetak lagi untuk melihat perubahannya.
 
 ## Unguided
 
@@ -588,7 +582,7 @@ void dealokasi(address &P) {
 void printInfo(List L) {
     address P = L.First;
     while (P != Nil) {
-        cout << P->info << " " << endl;
+        cout << P->info << " ";
         P = P->next;
     }
     cout << endl;
@@ -673,22 +667,18 @@ int main() {
 ![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%205/Output%20UnGuided/OutputTotalValue(4).png)
 
 Penjelasan unguided 1 :
-Program ini mengimplementasikan struktur data singly linked list menggunakan konsep Abstract Data Type (ADT) dalam bahasa C++, dengan tujuan menyimpan dan menampilkan lima buah bilangan bulat. Implementasinya dibagi ke dalam tiga file terpisah agar deklarasi, isi fungsi, dan alur program tidak tercampur. 
+Kode ini saya tulis dan jalankan dalam satu file saja, karena ketiga soal memakai ADT yang sama, yaitu Singly Linked List. Perbedaannya ada pada output yang saya tampilkan untuk tiap perintah soal.
 
-File Singlylist.h berfungsi sebagai kerangka dasar program. Di dalamnya terdapat definisi struct Elmlist yang menampung data (info) dan pointer ke node berikutnya (next), serta struct List yang memuat pointer First sebagai penanda node pertama. File ini juga memuat deklarasi prototipe fungsi dan Nil sebagai representasi NULL.
+Output pertama menampilkan seluruh isi list dengan printInfo, yaitu 9 12 8 0 2. Urutan ini terbentuk karena setiap node baru disisipkan di awal list dengan insertFirst, sehingga node yang terakhir dimasukkan (9) berada paling depan.
 
-Isi dari fungsi-fungsi yang telah dideklarasikan tersebut ditulis pada file Singlylist.cpp. Prosedur createList menginisialisasi list menjadi kosong, fungsi alokasi membuat node baru menggunakan new, dan prosedur insertFirst menyisipkan node baru di bagian paling depan list. Selain itu, prosedur printInfo menelusuri node dari First sampai Nil sambil mencetak isinya ke layar.
+Output kedua mencari angka dalam suatu list yang sudah dibuat, berdasarkan input alokasi angka seperti output pertama, dengan findElm. Fungsi ini menelusuri list dan membandingkan info tiap node dengan nilai yang dicari. Jika ketemu, ditampilkan pesan bahwa angka tersebut ada dalam list, dan jika tidak, ditampilkan pesan tidak ditemukan.
 
-Terakhir, file main.cpp menjadi pusat eksekusi program. Pada bagian ini, angka 2, 0, 8, 12, dan 9 dialokasikan satu per satu lalu dimasukkan menggunakan insertFirst. Karena setiap node baru ditempatkan di depan, urutan datanya berbalik dari urutan pemasukan, sehingga keluaran yang tampil di layar adalah 9 12 8 0 2.
+Output ketiga menjumlahkan seluruh nilai node dengan variabel total dan pointer bantu P yang menelusuri list dari node pertama sampai Nil, dengan hasil 9 + 12 + 8 + 0 + 2 = 31.
 
 ## Kesimpulan
-Kesimpulan dari praktikum Modul 4 mengenai Singly Linked List, saya belajar ternyata untuk menyimpan sebuah data tidak hanya dapat disimpan menggunakan array, tetapi bisa juga menggunakan node yang memanfaatkan memori, dan disambung seperti struktur kereta yang saling menyambung. Masih banyak kegagalan dalam membuat alur program SLL ini terutama saat memahami pointer dan cara menyambung antar node. Untuk ke depannya saya perlu lebih banyak latihan supaya lebih paham.
+Dari praktikum Modul 5 tentang Singly Linked List bagian kedua, saya belajar bahwa data tidak hanya bisa disimpan dengan array, tetapi juga dengan node-node di memori yang disambung satu sama lain seperti gerbong kereta. Pada bagian guided, saya mencoba penyisipan node di awal, di akhir, dan setelah node tertentu, lalu mengubah isi node dengan operasi update. Pada bagian unguided, saya menggunakan searching untuk mencari sebuah nilai di dalam list dan menelusuri seluruh node untuk menjumlahkan isinya. Dari situ saya melihat bahwa hampir semua operasi memakai pola yang sama, yaitu menelusuri list dari node pertama sampai Nil. Saya masih sering keliru membedakan alamat node dengan nilai di dalamnya, terutama saat memakai pointer, jadi ke depannya saya perlu lebih banyak berlatih.
 
 ## Referensi
 
 <br>
-[1] M. R. Abu Sara, M. F. J. Klaib, dan M. Hasan, “Hybrid array list: An efficient dynamic array with linked list structure,” Indones. J. Comput., vol. 5, no. 3, hlm. 47–62, Des. 2021, doi: 10.34818/indojc.2021.5.3.527.
-<br>
-[2] Fakultas Informatika, Telkom University, “Modul 4: Singly linked list (bagian pertama),” dalam Modul Praktikum Struktur Data, Bandung, Indonesia: Telkom University, 2026, hlm. 36–46.
-<br>
-[3] A. O. Akinde, S. O. Okolie, dan S. O. Kuyoro, “The S-linked list—A variant of the linked list data structure,” J. Emerg. Trends Comput. Inf. Sci., vol. 4, no. 6, hlm. 571–576, Jun. 2013.
+[1] Fakultas Informatika, Telkom University, “Modul 5: Singly linked list (bagian kedua),” dalam Modul Praktikum Struktur Data, Bandung, Indonesia: Telkom University, 2026, hlm. 47–50.

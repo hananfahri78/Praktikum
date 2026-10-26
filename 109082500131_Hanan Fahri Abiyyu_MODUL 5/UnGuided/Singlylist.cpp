@@ -22,7 +22,7 @@ void dealokasi(address &P) {
 void printInfo(List L) {
     address P = L.First;
     while (P != Nil) {
-        cout << P->info << " " << endl;
+        cout << P->info << " ";
         P = P->next;
     }
     cout << endl;
