@@ -881,15 +881,15 @@ int main() {
 ```
 ### Output Unguided 1 :
 
-##### Output 1 Alokasi
+##### Output 1 Input Nomor Polisi
 
 ![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputInNopol(1).png)
 
-##### Output 2 Find Element 
+##### Output 2 Find Nomor Polisi
 
 ![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputCariNopol(2).png)
 
-##### Output 3 Total Value 
+##### Output 3 Delete Nomor Polisi
 
 ![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputDelNopol(3).png)
 
