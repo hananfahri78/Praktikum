@@ -905,5 +905,7 @@ Berdasarkan praktikum Modul 6 tentang Doubly Linked List bagian pertama, saya me
 
 <br>
 [1] Fakultas Informatika, Telkom University, “Modul 6: Doubly linked list (bagian pertama),” dalam Modul Praktikum Struktur Data, Bandung, Indonesia: Telkom University, 2026, hlm. 51–58.
+<br>
 [2] A. Wijoyo et al., "Penggunaan Algoritma Doubly Linked List Untuk Insertion dan Deletion," JRIIN: Jurnal Riset Informatika dan Inovasi, vol. 1, no. 12, pp. 1329-1331, May. 2024.
+<br>
 [3] T. R. Y. Saketang, G. R. Pandiangan, F. A. Matondang, and R. I. Situmorang, "Implementasi Struktur Data Stack pada Sistem Recently Played Music Streaming Berbasis Prinsip Lifo," JPIM: Jurnal Penelitian Ilmiah Multidisipliner, vol. 2, no. 3, pp. 1192-1197, Oct. 2025.
