@@ -215,9 +215,11 @@ int main()
 }
 ```
 
-Pada latihan ini saya membuat program untuk mengelola data makanan (nama, jenis, harga, dan rating) menggunakan doubly linked list. Berbeda dengan singly linked list, setiap node di sini memiliki dua pointer, yaitu next ke node sesudahnya dan prev ke node sebelumnya, sehingga list dapat ditelusuri dari dua arah. Karena itu, proses pencarian pada program ini ada yang berjalan maju dari node pertama dan ada yang mundur dari node terakhir. Program dipisah menjadi tiga file, yaitu header untuk deklarasi struktur dan fungsi, file implementasi untuk isi fungsinya, dan main sebagai program utama.
+Program ini mengimplementasikan struktur data Stack (tumpukan) menggunakan representasi array atau tabel secara modular dengan menerapkan prinsip LIFO (Last In, First Out). Terdiri dari file header stack.h, program mendefinisikan sebuah struct stackTable yang memuat array data berkapasitas maksimal 10 elemen serta variabel top sebagai penanda posisi puncak Stack. Inisialisasi awal dilakukan melalui prosedur createStack yang memberikan nilai -1 berfungsi sebagai penanda bahwa stack masih kosong, lengkap dengan fungsi pengecekan seperti isEmpty dan isFull yang berguna untuk mengecek batas kapasitas sebelum data diproses.
 
-Pada bagian main, saya membuat list kosong dan lima node untuk Nasi Rames, Ayam Geprek, Risol Mayo, Mie Ayam, dan Donat. Mie Ayam ditempatkan lebih dulu menggunakan insertFirst, Donat ditaruh di akhir dengan insertLast, lalu Nasi Rames disisipkan setelah Mie Ayam dengan insertAfter dan Risol Mayo disisipkan sebelum Donat dengan insertBefore. Ayam Geprek ditambahkan di akhir, sehingga urutan list menjadi Mie Ayam, Nasi Rames, Risol Mayo, Donat, Ayam Geprek. Setelah itu, saya menjalankan operasi update pada node pertama, terakhir, serta node di sekitar node tertentu, kemudian mencari data berdasarkan nama dan rating minimum. Terakhir, saya menguji penghapusan dengan deleteByName untuk menghapus node berdasarkan nama, lalu menghapus node dengan deleteFirst dan deleteBefore, dan isi list dicetak pada setiap tahap untuk memastikan hasil tiap operasi sudah sesuai.
+Penambahan data dilakukan melalui push, posisi top akan digeser naik dan nilai baru disimpan ke dalam array selama stack belum mencapai batas maksimal. Sebaliknya, operasi pop bertugas menghapus data teratas dengan mengurangi nilai top setelah memastikan stack tidak dalam kondisi kosong. Selain operasi utama tersebut, program ini juga dilengkapi fitur pendukung seperti update untuk mengubah nilai data pada posisi tertentu dari puncak menggunakan perhitungan indeks yang presisi, serta prosedur view yang mencetak seluruh elemen stack secara menurun dari puncak ke dasar.
+
+Implementasi keseluruhan program dilakukan di file main, percobaan push and pop, pencarian data, hingga update data dengan memasukkan nilai baru. 
 
 ### 2. Guided
 #### stack.h (Linked list)
@@ -250,6 +252,8 @@ void view(stack listStack);
 void searchData(stack listStack, int data);
 #endif
 ```
+
+
 #### stack.cpp (Linked list) 
 ```C++
 #include "stack.h"
@@ -461,6 +465,11 @@ int main()
     return 0;
 }
 ```
+Program ini masih pada materi dan implementasi yang mirip dengan program sebelumnya, yaitu Stack dengan menerapkan prinsip yang sama, LIFO (Last In First Out). Perbedaannya ada pada struktur kodenya. Pada program sebelumnya, implementasi Stack menggunakan Array, sementara pada program ini implementasinya menggunakan Linked list.
+
+Operasi penambahan data dilakukan melalui prosedur push menggunakan konsep insert first, node baru ditaruh di bagian paling depan dan menunjuk ke top lama sebelum posisi top digeser. Sebaliknya, operasi pop bertugas menghapus elemen teratas dengan memanfaatkan fungsi dealokasi untuk membersihkan memori secara aman setelah memastikan stack tidak kosong. Selain itu, program ini juga dilengkapi prosedur pendukung seperti update untuk mengubah nilai data pada posisi tertentu dengan menelusuri node secara berurutan, serta prosedur view dan searchData untuk menampilkan isi tumpukan dan mencari keberadaan data tertentu.
+
+Keseluruhan program dijalankan melalui file main.
 
 ## Unguided
 
@@ -615,25 +624,33 @@ int main() {
 ```
 ### Output Unguided 1 :
 
-##### Output 1 Input Nomor Polisi
+##### Output 1 Balik Stack
 
-![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputInNopol(1).png)
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_balikStack.png)
 
-##### Output 2 Find Nomor Polisi
+##### Output 2 Ascending
 
-![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputCariNopol(2).png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_Ascending.png)
 
-##### Output 3 Delete Nomor Polisi
+##### Output 3 Get Input 
 
-![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%206/Output%20UnGuided/OutputDelNopol(3).png)
+![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_GetInput.png)
 
 Penjelasan unguided 1 :
-Membuat program untuk menyimpan data kendaraan (nomor polisi, warna, dan tahun buat) menggunakan doubly linked list. Program dibagi menjadi tiga file: Doublylist.h berisi struktur data dan deklarasi prosedur, Doublylist.cpp berisi isi prosedurnya, dan main.cpp sebagai program utama. Prosedur yang dibuat mencakup CreateList, alokasi, dealokasi, printInfo, insertLast, findElm, serta tiga prosedur hapus, yaitu deleteFirst, deleteLast, dan deleteAfter.
+Pada soal ini, terdapat tiga perintah atau latihan pada implementasi Stack.
 
-Pada program main.cpp, program meminta input data kendaraan sebanyak empat kali. Setiap kali input, nomor polisi dicek lebih dulu dengan findElm. Jika nomor sudah ada di list, ditampilkan pesan bahwa nomor polisi sudah terdaftar. Jika belum, node baru dibuat dengan alokasi dan ditambahkan ke akhir list dengan insertLast. Isi list dicetak oleh printInfo yang menelusuri dari node terakhir ke node pertama, sehingga datanya tampil dengan urutan terbalik dari urutan input. Setelah itu, program mencari kendaraan berdasarkan nomor polisi yang dimasukkan, lalu menampilkan datanya jika ditemukan. Pada bagian penghapusan, nomor polisi yang dimasukkan dicari terlebih dahulu dengan findElm untuk menentukan posisinya. Jika berada di awal list, dipakai deleteFirst. Jika di akhir, dipakai deleteLast. Jika di tengah, dipakai deleteAfter dengan node sebelumnya sebagai acuan. Node yang sudah dilepas dari list kemudian dibebaskan memorinya dengan dealokasi, dan isi list dicetak kembali untuk memastikan data sudah terhapus.
+<br>
+1. Balik Stack 
+Fokus utama pada bagian ini adalah membalik urutan elemen di dalam array secara fisik. Karena sifat dasar stack itu kaku dengan prinsip LIFO (data yang terakhir masuk selalu berada di puncak), prosedur ini dibuat untuk membalik posisi seluruh tumpukan—sehingga data yang tadinya berada di dasar berpindah ke puncak, dan sebaliknya. Hal ini biasanya diperlukan ketika kita ingin membaca atau memproses urutan data dari sudut pandang yang berkebalikan dengan struktur aslinya.
+<br>
+2. Penyisipan Nilai Berdasarkan Ascending
+Prosedur pushAscending dirancang agar data yang masuk langsung tersusun secara menaik (ascending) dari bawah ke atas. Logikanya berjalan dengan cara mencari posisi yang tepat untuk angka baru, menggeser elemen-elemen di atasnya untuk menyediakan ruang, lalu menyisipkan data tersebut ke posisi yang sesuai. Dengan begitu, tumpukan akan selalu berada dalam kondisi terurut rapi setiap kali ada data baru yang dimasukkan.
+<br>
+3. Pembacaan Input Nilai Secara Dinamis
+Bagian ini berfokus pada bagaimana program menerima dan mengolah data masukan dari pengguna secara langsung lewat stream karakter. Program memanfaatkan fungsi cin.get() untuk membaca deretan karakter yang diketikkan pengguna secara terus-menerus sampai tombol Enter ditekan.
 
 ## Kesimpulan
-Berdasarkan praktikum Modul 6 tentang Doubly Linked List bagian pertama, saya mempelajari bagaimana sistem navigasi dua arah bekerja. Pada metode DLL ini setiap node memiliki dua pointer, yaitu next yang menunjuk ke node selanjutnya dan prev yang menunjuk ke node sebelumnya, sehingga list dapat ditelusuri maju maupun mundur. Hal ini sering digunakan pada sistem pemutar musik digital.
+Melalui praktikum Modul 7 mengenai struktur data Stack (tumpukan), saya memahami bagaimana cara kerja penyimpanan data berbasis prinsip LIFO (Last In, First Out). Pada materi ini, pengimplementasiannya dapat dilakukan dengan dua cara, yakni menggunakan array memakai variabel top ataupun linked list dengan konsep insert first, serta dilengkapi berbagai fungsi tambahan seperti pembaruan data dan penyisipan terurut.
 
 ## Referensi
 
@@ -641,5 +658,3 @@ Berdasarkan praktikum Modul 6 tentang Doubly Linked List bagian pertama, saya me
 [1] Fakultas Informatika, Telkom University, “Modul 7: Stack,” dalam Modul Praktikum Struktur Data, Bandung, Indonesia: Telkom University, 2026, hlm. 59–65.
 <br>
 [2] R. D. Setiyawan, D. Hermawan, A. F. Abdillah, A. Mujayanah, and R. Vindua, "Penggunaan Struktur Data Stack dalam Pemrograman C++ dengan Pendekatan Array dan Linked List," JUTECH: Journal Education and Technology, vol. 5, no. 2, pp. 484-498, Dec. 2024.
-<br>
-[3] T. R. Y. Saketang, G. R. Pandiangan, F. A. Matondang, and R. I. Situmorang, "Implementasi Struktur Data Stack pada Sistem Recently Played Music Streaming Berbasis Prinsip Lifo," JPIM: Jurnal Penelitian Ilmiah Multidisipliner, vol. 2, no. 3, pp. 1192-1197, Oct. 2025.
