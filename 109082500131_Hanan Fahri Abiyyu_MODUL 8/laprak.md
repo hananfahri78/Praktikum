@@ -6,18 +6,13 @@
 
 ### A. Queue <br/>
 
-Stack merupakan salah satu bentuk struktur data linier yang mengikuti aturan tertentu untuk melakukan operasi. Stack bersifat LIFO (Last In First Out) dan objek yang terakhir masuk ke dalam Stack akan menjadi yang pertama dikeluarkan [2].
+Queue atau antrean adalah salah satu jenis struktur data linear yang menerapkan prinsip FIFO (First In First Out), yaitu elemen yang pertama masuk akan menjadi elemen yang pertama keluar. Konsep tersebut dapat ditemukan dalam kehidupan nyata, seperti antrean pada loket layanan publik, antrean kasir, dan antrean data dalam transmisi jaringan komputer [2].
 
-#### Operasi Utama Stack
-<br>
-1. Push: menambahkan elemen baru ke dalam Stack pada posisi paling atas.
-2. Pop: menghapus elemen teratas dari Stack dan mengembalikan nilainya.
-3. Top: mengecek elemen teratas dari Stack tanpa menghapusnya.
-4. IsEmpty: memeriksa apakah Stack kosong atau tidak.
-5. Size: mengembalikan jumlah elemen dalam Stack. 
+#### Operasi-Operasi dalam Queue
+Dalam queue terdapat dua operasi utama, yaitu Enqueue (penyisipan) dan Dequeue (pengambilan/penghapusan) [1]. Enqueue adalah operasi untuk menambahkan elemen ke bagian belakang antrean, sementara Dequeue adalah operasi untuk menghapus elemen dari bagian depan [2].
 
-#### Kegunaan implementasi Stack 
-Mengorganisasi data dan memudahkan penyimpanan komputer, digunakan dalam berbagai algoritma, seperti tower of hanoi, tree traversal, dan rekursi [2]. 
+#### Struktur Queue 
+Struktur queue terdiri dari dua pointer utama, yaitu front dan rear. Pointer front menunjukkan elemen pertama dalam antrean, sedangkan rear menunjukkan elemen terakhir yang ditambahkan. Elemen-elemen yang berada di antara front dan rear merupakan elemen aktif dalam antrian. Saat operasi dequeue dilakukan, elemen di posisi front akan dihapus dan pointer front bergerak maju. Sebaliknya, saat enqueue dilakukan, pointer rear akan berpindah ke posisi berikutnya [2]. 
 
 ## Guided
 
@@ -431,9 +426,9 @@ bool isEmptyQueue(Queue Q) {
 }
 
 
-// Full queue
+// isFull queue
 
-/* Full Alter 1
+/* isFull Alter 1
 bool isFullQueue(Queue Q) {
     if (Q.tail == MAX - 1) {
         return true;
@@ -443,14 +438,14 @@ bool isFullQueue(Queue Q) {
 }
 */
 
-/* Full ALter 2
+/* isFull ALter 2
 bool isFullQueue(Queue Q) {
     return (Q.head == 0 && Q.tail == MAX - 1);
 }
 */
 
 
-// Full Alter 3
+// isFull Alter 3
 bool isFullQueue(Queue Q) {
     return ((Q.tail + 1) % MAX == Q.head);
 }
@@ -686,31 +681,27 @@ int main() {
 
 ##### Output 1 Balik Stack
 
-![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_balikStack.png)
+![Screenshot Output Unguided 1_1](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%208/Output%20Un/Output1.png)
 
 ##### Output 2 Ascending
 
-![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_Ascending.png)
+![Screenshot Output Unguided 1_2](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%208/Output%20Un/Output2.png)
 
 ##### Output 3 Get Input 
 
-![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%207/Output%20UnGuided/Output_GetInput.png)
+![Screenshot Output Unguided 1_3](https://github.com/hananfahri78/Praktikum/blob/main/109082500131_Hanan%20Fahri%20Abiyyu_MODUL%208/Output%20Un/Output3.png)
 
 Penjelasan unguided 1 :
-Pada soal ini, terdapat tiga perintah atau latihan pada implementasi Stack.
+Program latihan ini mengimplementasikan struktur data Queue berbasis array dengan kapasitas maksimalnya 5. Terdapat pengecekan antrean kosong menggunakan isEmptyQueue, antrean penuh menggunakan isFullQueue, melalui createQueue, serta pencetakan posisi indeks dan isi antrean menggunakan printInfo yang disusun secara modular pada file queue.h, queue.cpp, dan main.cpp.
 
-<br>
-1. Balik Stack 
-Fokus utama pada bagian ini adalah membalik urutan elemen di dalam array secara fisik. Karena sifat dasar stack itu kaku dengan prinsip LIFO (data yang terakhir masuk selalu berada di puncak), prosedur ini dibuat untuk membalik posisi seluruh tumpukan—sehingga data yang tadinya berada di dasar berpindah ke puncak, dan sebaliknya. Hal ini biasanya diperlukan ketika kita ingin membaca atau memproses urutan data dari sudut pandang yang berkebalikan dengan struktur aslinya.
-<br>
-2. Penyisipan Nilai Berdasarkan Ascending
-Prosedur pushAscending dirancang agar data yang masuk langsung tersusun secara menaik (ascending) dari bawah ke atas. Logikanya berjalan dengan cara mencari posisi yang tepat untuk angka baru, menggeser elemen-elemen di atasnya untuk menyediakan ruang, lalu menyisipkan data tersebut ke posisi yang sesuai. Dengan begitu, tumpukan akan selalu berada dalam kondisi terurut rapi setiap kali ada data baru yang dimasukkan.
-<br>
-3. Pembacaan Input Nilai Secara Dinamis
-Bagian ini berfokus pada bagaimana program menerima dan mengolah data masukan dari pengguna secara langsung lewat stream karakter. Program memanfaatkan fungsi cin.get() untuk membaca deretan karakter yang diketikkan pengguna secara terus-menerus sampai tombol Enter ditekan.
+Pada pengerjaan latihan soal ini, dibagi berdasarkan 3 alternatif seperti yang tertera pada modul, yaitu alternatif 1, alternatif 2, dan alternatif 3. 
+
+Alternatif 1 (head tetap di 0 saat terisi), isFullQueue memeriksa Q.tail == MAX - 1, enqueue memajukan Q.tail, sedangkan dequeue mengambil elemen terdepan lalu menggeser elemen berikutnya ke kiri dan menurunkan Q.tail (atau mereset ke -1 jika elemen terakhir dihapus). Selanjutnya Alternatif 2 (head dan tail bergerak), dequeue hanya memajukan Q.head tanpa pergeseran elemen, sementara enqueue menangani kondisi penuh absolut (Q.head == 0 && Q.tail == MAX - 1) serta kondisi "penuh semu" dengan menggeser sisa elemen ke indeks awal agar ruang kosong di depan dapat dimanfaatkan kembali. Terakhir Alternatif 3 (circular queue), indeks head dan tail bergerak melingkar menggunakan operasi modulo % MAX, dengan pengecekan penuh ((Q.tail + 1) % MAX == Q.head) serta penelusuran cetak yang mengikuti alur melingkar hingga Q.tail. 
+
+Semua mekanisme tersebut diuji pada file main.cpp melalui rangkaian operasi enqueue, dequeue, dan printInfo untuk mengamati perubahan posisi head dan tail beserta isi antrean pada tiap langkah.
 
 ## Kesimpulan
-Melalui praktikum Modul 7 mengenai struktur data Stack (tumpukan), saya memahami bagaimana cara kerja penyimpanan data berbasis prinsip LIFO (Last In, First Out). Pada materi ini, pengimplementasiannya dapat dilakukan dengan dua cara, yakni menggunakan array memakai variabel top ataupun linked list dengan konsep insert first, serta dilengkapi berbagai fungsi tambahan seperti pembaruan data dan penyisipan terurut.
+Melalui praktikum Modul 8 mengenai Queue (antrean), saya memahami bagaimana cara kerja penyimpanan data dengan prinsip FIFO (First In, First Out). Pada materi ini, pengimplementasiannya dapat dilakukan menggunakan array dengan pengelolaan indeks head dan tail (mulai dari pergeseran elemen, pergerakan indeks dengan penanganan kondisi penuh semu, hingga circular queue) maupun menggunakan linked list dengan penanda head dan tail untuk operasi enqueue dan dequeue.
 
 ## Referensi
 

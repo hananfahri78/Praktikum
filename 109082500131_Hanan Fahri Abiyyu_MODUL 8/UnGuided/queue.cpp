@@ -14,9 +14,9 @@ bool isEmptyQueue(Queue Q) {
 }
 
 
-// Full queue
+// isFull queue
 
-/* Full Alter 1
+/* isFull Alter 1
 bool isFullQueue(Queue Q) {
     if (Q.tail == MAX - 1) {
         return true;
@@ -26,14 +26,14 @@ bool isFullQueue(Queue Q) {
 }
 */
 
-/* Full ALter 2
+/* isFull ALter 2
 bool isFullQueue(Queue Q) {
     return (Q.head == 0 && Q.tail == MAX - 1);
 }
 */
 
 
-// Full Alter 3
+// isFull Alter 3
 bool isFullQueue(Queue Q) {
     return ((Q.tail + 1) % MAX == Q.head);
 }
